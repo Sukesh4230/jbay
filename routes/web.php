@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\DiscoverController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SpaController;
@@ -78,7 +79,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::view('sad','website.index');
+Route::view('sad', 'website.index');
 
 Auth::routes();
 Route::group(
@@ -110,5 +111,8 @@ Route::group(
         Route::resource('discovers', DiscoverController::class);
         Route::post('discover-slider-upload', [DiscoverController::class, 'sliderImageUpload'])->name('discover-slider-upload');
         Route::get('delete-discover-slider-image/{id}', [DiscoverController::class, 'deleteSlider'])->name('delete-discover-slider-image');
+
+        Route::resource('galleries', GalleryController::class);
+
     }
 );

@@ -161,11 +161,11 @@
                         </a>
                     </div>
 
-                    <div class="nav-item-wrapper"><a class="nav-link label-1" href="/admin-gallery" asd="index"
-                            role="button" data-bs-toggle="" aria-expanded="false">
-                            <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                                        data-feather="image"></span></span><span class="nav-link-text-wrapper"><span
-                                        class="nav-link-text">Gallery</span></span>
+                    <div class="nav-item-wrapper"><a class="nav-link label-1" href={{ route('galleries.index') }}
+                            asd="index" role="button" data-bs-toggle="" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <span class="nav-link-icon"><span data-feather="image"></span></span>
+                                <span class="nav-link-text-wrapper"><span class="nav-link-text">Gallery</span></span>
                             </div>
                         </a>
                     </div>
