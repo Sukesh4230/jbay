@@ -1,0 +1,100 @@
+.mc-hide-scrolls {
+    overflow: hidden;
+}
+
+div.mc-image {
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-animation: slide 7s linear;
+    -webkit-animation-play-state: play;
+    animation: slide 7s linear;
+    animation-play-state: play;
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+    z-index: 0 !important;
+    height: 100% !important;
+}
+
+.mc-old-browser .mc-image {
+    overflow: hidden;
+}
+
+#maximage {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+.header-overlay #arrow_left, .header-overlay #arrow_right {
+    height: 58px;
+    width: 132px;
+    position: absolute;
+    bottom: 0;
+    top: 2%;
+    margin: auto;
+    z-index: 2;
+    opacity: 0.7;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.header-overlay #arrow_left {
+    left: -60px;
+}
+
+.header-overlay #arrow_right {
+    right: -140px;
+}
+
+.header-overlay:hover #arrow_left {
+    left: 0;
+}
+
+.header-overlay:hover #arrow_right {
+    right: -70px;
+}
+
+.header-overlay #arrow_left:hover, .header-overlay #arrow_right:hover {
+    opacity: 1;
+}
+
+.header-overlay #arrow_left:active, .header-overlay #arrow_right:active {
+    bottom: -1px;
+}
+/*@keyframes slide {*/
+    /*from {*/
+        /*-ms-transform: scale(1, 1);*/
+        /*-webkit-transform: scale(1, 1);*/
+        /*transform: scale(1, 1);*/
+    /*}*/
+    /*to {*/
+        /*-ms-transform: scale(1.1, 1.1);*/
+        /*-webkit-transform: scale(1.1, 1.01);*/
+        /*transform: scale(1.1, 1.1);*/
+    /*}*/
+
+/*}*/
+
+/*@-webkit-keyframes slide {*/
+    /*from {*/
+        /*-ms-transform: scale(1, 1);*/
+        /*-webkit-transform: scale(1, 1);*/
+        /*transform: scale(1, 1);*/
+    /*}*/
+    /*to {*/
+        /*-ms-transform: scale(1.05, 1.05);*/
+        /*-webkit-transform: scale(1.05, 1.05);*/
+        /*transform: scale(1.05, 1.05);*/
+    /*}*/
+/*}*/

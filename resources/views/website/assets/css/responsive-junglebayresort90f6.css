@@ -1,0 +1,777 @@
+@media screen and (max-width: 1920px) {
+
+}
+
+@media screen and (max-width: 1600px) {
+    .details_accommodation img {
+        width: 35px;
+    }
+
+    .name_accommodation {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .nav > li > a {
+        padding: 0 22px;
+    }
+
+    .underline:before {
+        left: 24px;
+    }
+
+    .section_menu {
+        padding: 0 50px;
+    }
+
+    .navbar-brand {
+        left: 50px;
+    }
+
+    .section_ibe {
+        right: 50px;
+        bottom: 120px;
+    }
+
+    .boat_transfer {
+        right: 50px;
+    }
+
+    .section_welcome {
+        padding: 100px 50px 150px 50px;
+    }
+
+    .section_promotion {
+        padding: 100px 50px;
+    }
+
+    .section_facilities {
+        padding: 100px 50px;
+    }
+
+    .scroll_menu .nav > li > a {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .scroll_menu {
+        padding: 30px 15px 0 !important;
+    }
+
+  /*  .owl-next {
+    display: none !important;
+    }
+
+    .owl-prev {
+       display: none !important;
+    }
+*/
+
+    .owl-next {
+    position: absolute;
+    right:50px;
+    top:20px;
+}
+
+.owl-prev {
+    position: absolute;
+    left:50px;
+    top:20px;
+}
+
+.book_mobile {
+    display: none;
+}
+
+.amp {
+    color: #545454;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+    .scroll_menu .underline:before {
+        left: 15px;
+    }
+
+    .section_bundhayaphoto {
+        left: 50px;
+    }
+
+    .section_arrow_slide {
+        left: 50px;
+    }
+    .section_contentchild {
+        padding: 100px 50px;
+    }
+    .active:before {
+        width: 30px;
+    }
+    .underline:hover:before {
+        width: 30px;
+    }
+    .section_contact {
+        padding-top: 150px;
+    }
+
+    .sechead {
+    font-size: 25px;
+    font-family: Playfair Display;
+    font-weight: 400;
+    color: #455d58;
+    letter-spacing: 1px;
+    text-transform: inherit;
+    margin-bottom: 8px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+}
+
+@media screen and (max-width: 1400px) {
+    .nav > li > a {
+        padding: 0 16px;
+    }
+
+    .underline:before {
+        left: 16px;
+    }
+
+    #outdate-label {
+        font-size: 26px;
+    }
+
+    #indate-label {
+        font-size: 26px;
+    }
+
+    .text_slide {
+        left: 60px;
+        text-align: left;
+    }
+
+    .details_accommodation li {
+        padding: 0 10px;
+    }
+    .image_photo {
+        height: 400px;
+    }
+    .box_checkinout{
+        margin-top: 15px;
+    }
+    .text_bookyourstay{
+        padding: 0 0 10px 0 !important;
+    }
+    .widget_02 ul{
+        padding: 35px 5px 5px 5px;
+        width: 285px;
+    }
+    .slide_promotion .owl-stage-outer {
+        overflow: hidden;
+    }
+    #btn-booknow {
+        padding: 0 0 0!important;
+    }
+    .bestrate{
+        padding: 10px 15px;
+    }
+    .input_promocode{
+        padding: 0 0 10px 0!important;
+    }
+    .reservation_box select {
+        padding: 10px 0 10px 0;
+    }
+    .widget_02 .btnbook_reser{
+        font-size: 14px;
+    }
+    .nav > li > a{
+        line-height: 70px;
+    }
+    .underline:before{
+        top: 15px;
+    }
+    .section_ibe{
+        bottom: 95px;
+    }
+    .dropdown-menu {
+        bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav > li > a {
+        font-size: 14px;
+    }
+
+    .scroll_menu .nav > li > a {
+        font-size: 12px;
+    }
+
+    .text_slide {
+        bottom: 170px;
+    }
+
+ /*   #section_scrolldown {
+        display: none;
+    }
+*/
+}
+
+@media screen and (max-width: 1199px) {
+    .nav > li > a {
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    .underline:before {
+        left: 15px;
+    }
+
+    .active:before {
+        width: 30px;
+    }
+
+    .underline:hover:before {
+        width: 30px;
+    }
+    .section_contentchild h1 {
+        font-size: 34px;
+    }
+    .section_amenities li {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .section_ibe {
+        display: none;
+    }
+
+    .nav_mobile {
+        display: block;
+    }
+
+    .menu_pc {
+        display: none !important;
+    }
+
+    .menu_mobile nav {
+        margin: 0;
+    }
+
+    .toggle {
+        display: block;
+        text-decoration: none;
+        border: none;
+        width: 100%;
+        height: 20px;
+    }
+
+    [id^=drop]:checked + ul {
+        display: block;
+        padding: 0;
+        text-transform: none;
+        margin-top: 15px;
+    }
+
+    .menu_mobile nav ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .menu_mobile nav ul ul {
+        float: none;
+        position: static;
+        color: #ffffff;
+    }
+
+    .menu_mobile nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+        display: none;
+    }
+
+    .menu_mobile nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .menu_mobile nav ul ul ul li {
+        position: static;
+
+    }
+
+    .section_menu {
+        height: 60px;
+        top: 50px;
+        background: none;
+    }
+
+
+
+    .scroll_menu {
+        height: 110px;
+    }
+
+    .book_mobile {
+        display: block;
+    }
+
+    .scroll_menu  {
+        display: block;
+    }
+
+    #section_scrolldown a span {
+        left: 60px;
+    }
+
+    #section_scrolldown {
+    bottom:150px;
+    left:35%;
+    }
+
+    .jumbotron p {
+    margin-bottom:15px;
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.section_contentchild h1 {
+    font-size: 20px;
+}
+.m-70 {
+    margin-top:0px;
+    margin-bottom:70px;
+}
+
+.mt-101{
+    margin-top: 100px;
+}
+
+    .text_slide {
+        bottom: 70px;
+        text-align: center;
+        left: 0;
+    }
+
+    .sisterhotel_top {
+        top: 5px;
+    }
+
+    .boat_transfer {
+        top: 0;
+        bottom: 0;
+        height: 100px;
+        margin: auto;
+    }
+
+    .cnt223 {
+        width: 500px;
+    }
+
+    .position_popup {
+        height: 315px;
+    }
+    .col-xs-3 , .col-xs-6{
+        width: 100%;
+    }
+    .details_contentchild {
+        padding: 50px;
+        height: auto;
+        text-align: center;
+    }
+    .btn_bookmobile {
+        line-height: 24px;
+    }
+    .section_amenities li {
+        width: 33.33333%;
+    }
+    #maximage {
+        height: 100vh;
+    }
+
+    .img-h-responsive{
+        width: 100% !important;
+    height: 200px !important;
+    margin-top: 100px !important;
+    }
+
+    .laptop-img{
+        display: none;
+    }
+
+    .mobile-img{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    }
+    .section_menu {
+        padding: 0;
+        top: 0;
+    }
+
+    .nav_mobile {
+        right: 0;
+    }
+    .navbar-brand {
+        left: 25px;
+        top: 25px;
+    }
+    .brand_logo {
+        width: 180px;
+        height: 70px;
+    }
+    .scroll_menu .brand_logo {
+        width: 165px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn_hotelsister {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .slide_promotion .owl-stage-outer {
+        overflow: hidden;
+    }
+    .section_amenities li {
+        width: 50%;
+    }
+    .contact_form{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section_welcome h1 {
+        line-height: 1;
+    }
+
+    .section_welcome h1:before {
+        left: 0;
+    }
+
+    .name_accommodation {
+    bottom: -35px !important;
+}
+
+.details_accommodation ul {
+    margin-top: 50px !important;
+}
+
+.text_slide h1 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.btn_bk {
+    background: #2f2f2f;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1px 23px;
+    border: none;
+    font-size: 19px;
+    transition: all 0.5s;
+    font-weight: 700;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1000;
+    display: block;
+}
+
+.scroll_menu .sisterhotel_top {
+    opacity: 0;
+}
+
+.dts{
+    
+    background: #fff;
+    z-index: 1;
+}
+
+
+
+.mbl{
+    margin-left: -35px;
+}
+
+.mb-lgo{
+    
+    width: 170px;
+    margin-top: 45px;
+
+}
+
+.ps-footer__copyright p {
+    margin-bottom: 0;
+    color: #fff;
+    line-height: 28.5px;
+}
+
+
+
+
+
+/*  h1 {
+    font-size: 20px!important;
+    text-transform: uppercase;
+}*/
+
+.slide_contentchild .owl-nav {
+    display: none;
+}
+
+    .section_footer h2 {
+        font-size: 16px!important;
+    }
+
+    .section_welcome h1:before {
+        top: -35px;
+        font-size: 26px;
+        left: 0;
+        right: 0;
+    }
+
+    .section_welcome {
+        padding: 100px 25px 150px 25px;
+    }
+
+    .owl-nav {
+        bottom: 0;
+        top: 0;
+        height: 40px;
+        margin: auto;
+    }
+
+    .name_accommodation {
+     /*   width: 85%;*/
+        padding: 0px;
+    }
+
+    .details_accommodation {
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    .btn_bookmobile {
+        font-size: 14px;
+    }
+
+    .scroll_menu .brand_logo {
+        width: 120px;
+        height: 50px;
+        top: 15px;
+    }
+
+
+
+    .navbar-brand {
+        left: 25px;
+        top: 15px;
+    }
+
+    .brand_logo {
+        width: 120px;
+        height: 50px;
+    }
+
+    .section_promotion {
+        padding: 100px 25px;
+    }
+
+    .section_facilities {
+        padding: 50px 25px;
+    }
+    .section_footer {
+        padding: 50px 0;
+    }
+
+    .btn_hotelsister {
+        width: 250px;
+    }
+
+    .container {
+        padding-right: 25px!important;
+        padding-left: 25px!important;
+    }
+
+    .section_facilities .owl-nav {
+        top: 250px;
+        bottom: auto;
+    }
+
+    .details_facilities {
+        padding: 50px 0 0;
+    }
+
+    .cnt223 {
+        width: 300px;
+    }
+
+    .position_popup {
+        height: 207px;
+    }
+
+    .cnt223 .x {
+        right: -17px;
+        top: -25px;
+    }
+    .section_bundhayaphoto {
+        left: 25px;
+    }
+    .section_arrow_slide {
+        left: 25px;
+    }
+    .section_arrow_slide {
+        display: none;
+    }
+    .section_bundhayaphoto {
+        display: none;
+    }
+    .boat_transfer{
+        /* width: 100%; */
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 50px;
+        top: auto;
+        height: auto;
+    }
+    .section_contentchild {
+        padding: 10px 25px 50px;
+    }
+
+    .section_contactus {
+    padding: inherit;
+}
+
+    .box_reservation h1 {
+    font-size: 25px;
+}
+
+.detail_contactus {
+    background: #689335;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+    .imagebox_acoommodation {
+            height: 180px;
+    }
+    .details_contentchild {
+        padding: 50px 25px;
+    }
+    h2 {
+        font-size: 20px!important;
+    }
+    .section_amenities li {
+        width: 50%;
+        font-size: 10px;
+    }
+    .sisterhotel_top {
+        right: 15px;
+    }
+    .scroll_menu .nav_mobile {
+        right: 15px;
+    }
+    .scroll_menu .book_mobile {
+        right: 85px;
+    }
+
+    .scroll_menu .navbar-brand {
+        left: 15px;
+        top: 15px;
+    }
+    .scroll_menu .navbar-brand {
+        left: 15px!important;
+        top: 15px!important;
+    }
+    .scroll_menu {
+        height: 95px;
+    }
+    .button_container {
+        width: 30px;
+    }
+
+    .section_accommodationpage h1 {
+    margin: 0 auto 25px;
+    font-size: 20px;
+}
+
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns {
+    border-color: transparent;
+    display: none;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 8px;
+    margin: 0;
+    padding: 10px 0;
+    background: #545454;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: all 0.5s;
+}
+    .nav_mobile {
+        width: 70px;
+    }
+    .book_mobile {
+        right: 70px;
+    }
+    .section_welcome {
+        padding: 50px 25px 40px 25px;
+    }
+    .slide_accommodation .owl-nav{
+        bottom: 300px!important;
+        top: 0;
+    }
+    .section_contentchild .name_accommodation {
+            width: 70%;
+    padding: 0px 0px 0;
+    }
+    .section_contentchild .details_accommodation {
+        width: 100%;
+        padding: 10px;
+    }
+    .text_slide {
+        bottom: 0;
+        top: -100px;
+        height: 85px;
+    }
+    .section_contentchild .name_accommodation h2 {
+           font-size: 20px!important;
+    }
+    h4.title {
+   display: none;
+}
+.pc {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+    .section_amenities img {
+        width: 40px;
+    }
+    .section_prices {
+        padding-bottom: 50px;
+    }
+    .section_contact{
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+}

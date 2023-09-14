@@ -1,0 +1,471 @@
+
+select {
+    -webkit-appearance: inherit;
+    -moz-appearance: inherit;
+    appearance: inherit;
+    list-style: none;
+}
+
+body.fix_ibe{
+    overflow: hidden;
+}
+body.fix_ibe:after{
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.90);
+    animation: fadeIn 1s;
+    z-index: 1;
+    display: block;
+
+}
+input:focus::-webkit-input-placeholder {
+    color:transparent;
+    transition: all 0.3s;
+}
+
+.night_none {
+    display: none;
+}
+
+
+.reservation_box ul {
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+    width: 350px;
+    background: #414141;
+    color: #575a5a;
+}
+
+.reservation_box li {
+    list-style: none;
+    float: left;
+    width: 50%;
+}
+
+.reservation_box .input_night {
+    position: absolute;
+    width: 60px;
+    bottom: 10px;
+    left: -25px;
+    z-index: 0;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+    background: #eee;
+    color: #7d7575;
+
+}
+
+.reservation_box .popup_content {
+    position: absolute;
+    background: #fff;
+    width: 250px;
+    margin: 20px 0;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.reservation_box .content_ibe {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.reservation_box input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.reservation_box select {
+    width: 100%;
+    padding: 15px 0 15px 0;
+    border-radius: 0;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.reservation_box .text_reser {
+    width: 100%;
+}
+
+.reservation_box .input_inout {
+    text-align: left;
+}
+
+.reservation_box .form-group {
+    display: inline-block;
+    padding: 5px 10px 10px 10px !important;
+    margin: 0;
+    width: 100%;
+}
+
+.reservation_box .arrow {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+.reservation_box .arrow_index {
+    position: absolute;
+    bottom: 22px;
+    right: 20px;
+}
+
+.reservation_box .arrow_check {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.reservation_box .arrow_moon {
+    left: 5px;
+    z-index: 3;
+    color: #7c778b;
+
+    bottom: 22px;
+}
+
+.reservation_box .popup_content label {
+    padding: 10px;
+    color: #ff8500;
+    float: left;
+    text-transform: uppercase;
+}
+
+.reservation_box .popup_content #ageRow1 label {
+    color: #757575;
+}
+
+.reservation_box .popup_content #ageRow2 {
+    color: #757575;
+}
+
+.reservation_box .popup_content #ageRow3 {
+    color: #757575;
+}
+
+.reservation_box .popup_content .form_group_half {
+    /*width: 50%;*/
+    float: left;
+    position: relative;
+}
+
+.reservation_box .popup_content #numberrroomRow {
+    background: #ffffff;
+    /*border-bottom: 1px solid #eee;*/
+    /*border-top: 1px solid #eee;*/
+}
+
+.reservation_box .popup_content #numberOfRoom1 {
+    position: relative;
+    float: right;
+
+}
+
+.reservation_box .popup_content #numberOfRoom2 {
+    position: relative;
+    float: right;
+}
+
+.reservation_box .popup_content #numberOfRoom3 {
+    position: relative;
+    float: right;
+}
+.reservation_box .popup_content #numberOfRoom4 {
+    position: relative;
+    float: right;
+}
+
+.reservation_box .popup_content #numberOfRoom5 {
+    position: relative;
+    float: right;
+}
+
+.reservation_box .input-group-addon:first-child {
+    background: #fff;
+    padding: 0 15px;
+    border: 1px solid #eee;
+    font-size: 14px;
+    border-right: none;
+    text-transform: none;
+    color: #2f2f2f;
+}
+.input-group-addon:first-child{
+    width: 90px;
+}
+.input-group{
+    width: 100%;
+}
+.reservation_box .btnbook_reser {
+    background: #49aae4;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.reservation_box .btnbook_reser:hover {
+    background: #2f2f2f;
+    color: #fff;
+}
+
+/*#ui-datepicker-div:before{*/
+/*content: "\f0de";*/
+/*font: normal normal normal 14px/1 FontAwesome;*/
+/*position: absolute;*/
+/*top: -12px;*/
+/*font-size: 50px;*/
+/*color: #fff;*/
+/*left: 10px;*/
+/*}*/
+
+/*Horizontal_box*/
+.box_horizontal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    top: 0;
+    height: 115px;
+}
+
+.box_horizontal ul {
+    width: 100%;
+}
+
+.box_horizontal li {
+    width: 20%;
+}
+
+.box_horizontal .btnbook_reser {
+    padding: 10px;
+}
+
+.box_horizontal .input_inout {
+    text-align: center;
+}
+
+.popupTop {
+    bottom: 50px;
+    top: inherit;
+}
+
+.popupTop #numberrroomRow:before {
+    top: inherit;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    bottom: -15px;
+}
+
+.popupTop #ui-datepicker-div:before {
+
+}
+
+.tooltip_room {
+    position: absolute;
+    top: -50px;
+    background-color: #FFF;
+    width: 200px;
+    padding: 15px;
+    z-index: 999;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation: wobble 2s infinite;
+    display: none;
+}
+
+.tooltip_room h4 {
+    color: #353535 !important;
+    text-transform: none !important;
+    margin: 0;
+    font-weight: normal;
+}
+
+.tooltip_room:after {
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #FFF;
+    display: block;
+    z-index: 2;
+}
+
+::placeholder {
+    color: inherit;
+}
+
+
+
+.title_reser {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.title_reser h4 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.best_rate {
+    color: #fff;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+.best_rate img {
+    width: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.widget_04 .ui-datepicker {
+    margin: 45px 0;
+}
+.content_checkinout img{
+    left: 25px;
+    width: 30px!important;
+}
+.reservation_box .input_inout{
+    padding-left: 55px;
+}
+.btn_apply {
+    background: #ff8500!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff!important;
+    position: relative;
+    z-index: 1;
+    border: none!important;
+    padding: 15px!important;
+}
+
+.widget_02 li {
+    list-style: none;
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.widget_02 ul {
+    margin: 0;
+    padding: 40px 20px 20px 20px;
+    width: 315px;
+    background: none;
+    color: #2f2f2f;
+    /* position: absolute; */
+    z-index: 1;
+    background: #fff;
+    /* right: 100px; */
+    /* bottom: 200px; */
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.widget_02 .btnbook_reser {
+    background: #679334;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    border: none;
+    letter-spacing: normal;
+    font-size: 20px;
+}
+#popup_room_list select{
+    border: 1px solid #eee;
+    color: #2f2f2f;
+    padding: 10px;
+}
+.widget_02 h1{
+    font-size: 18px;
+    margin: 0;
+}
+.widget_02 p{
+    margin: 0;
+    text-transform: uppercase;
+}
+.content_ibe .arrow_room{
+    position: absolute;
+    width: 20px;
+    right: 0;
+    bottom: 0;
+    color: #58595b;
+    top: 0;
+    margin: auto;
+}
+.title_reservation{
+    color: #2374b9;
+}
+.input_in_out{
+    float: left;
+    width: 100%;
+}
+#indate-label{
+    font-size: 48px;
+    font-weight: bold;
+}
+#outdate-label{
+    font-size: 48px;
+    font-weight: bold;
+}
+.box_checkinout img{
+    margin-bottom: 5px;
+}
+.box_numberroom{
+    padding: 10px 0!important;
+}
+#btn-booknow{
+    padding: 10px 0 0!important;
+}
+.section_ibe{
+    position: absolute;
+    z-index: 2;
+    bottom: 200px;
+    right: 100px;
+}
+.input_promocode{
+    width: 100%;
+    padding: 0 0 15px 0!important;
+    border-radius: 0;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #e5e5e5!important;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+input,button,select,a{
+    outline: none;
+    user-select: none;
+}
