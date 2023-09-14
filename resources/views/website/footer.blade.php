@@ -130,7 +130,7 @@
    <script type="text/javascript" src="../web/assets/js/mystickyelements-fronted.minbb23.js?ver=1.9.5"></script>
 
    <script>
-       $(document).ready(function() {
+      
            var $gallery = new SimpleLightbox('.gallery a', {});
            $(window).scroll(function() {
                if ($(this).scrollTop() > 200) {
@@ -479,7 +479,6 @@
                $('.colors').hide();
                $('#' + $(this).val()).show();
            });
-       });
    </script>
 
    <div container-fluid>

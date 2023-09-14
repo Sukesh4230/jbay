@@ -40,39 +40,40 @@
 
     
 
-    <script type="text/javascript" src={{ asset('website/assets/js/jquery90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/js/javascript-junglebayresort90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/loading/js/loading90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/bootstrap/js/bootstrap90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/maximage/js/jquery.maximage.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/js/jquery90f6.js?=v3') }}></script>
+   
+    <script type="text/javascript" src={{ asset('web/assets/plugins/loading/js/loading90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/bootstrap/js/bootstrap90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/maximage/js/jquery.maximage.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/maximage/js/jquery.cycle.all.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/maximage/js/jquery.cycle.all.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/owl_carousel/js/owl.carousel.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/owl_carousel/js/owl.carousel.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lightgallery.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lightgallery.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-thumbnail.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-thumbnail.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-video.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-video.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-autoplay.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-autoplay.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-zoom.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-zoom.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-hash.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-hash.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-pager.min90f6.js?=v3') }}>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-pager.min90f6.js?=v3') }}>
     </script>
     <script type="text/javascript"
-        src={{ asset('website/assets/plugins/gallery_master/js/jquery.mousewheel.min90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/script.ibe90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/booking90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/jquery.ui90f6.js?=v3') }}></script>
+        src={{ asset('web/assets/plugins/gallery_master/js/jquery.mousewheel.min90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/ibe-widget2/js/script.ibe90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/ibe-widget2/js/booking90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/ibe-widget2/js/jquery.ui90f6.js?=v3') }}></script>
     <script type="text/javascript"
-        src={{ asset('website/assets/plugins/validationEngine/js/jquery.validationEngine-en90f6.js?=v3') }}></script>
+        src={{ asset('web/assets/plugins/validationEngine/js/jquery.validationEngine-en90f6.js?=v3') }}></script>
     <script type="text/javascript"
-        src={{ asset('website/assets/plugins/validationEngine/js/jquery.validationEngine90f6.js?=v3') }}></script>
+        src={{ asset('web/assets/plugins/validationEngine/js/jquery.validationEngine90f6.js?=v3') }}></script>
+        <script type="text/javascript" src={{ asset('web/assets/js/javascript-junglebayresort90f6.js?=v3') }}></script>
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
