@@ -23,6 +23,7 @@
     <link href="{{ asset('web/assets/plugins/ibe-widget2/css/style.ibe290f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/validationEngine/css/validationEngine.jqueryc3d7.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/css/style-junglebayresort90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/css/responsive-junglebayresort90f6.css?=v3') }}" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
 
  

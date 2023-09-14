@@ -180,7 +180,7 @@
     <div class="owl-carousel owl-theme slide_accommodation">
         <a href="poolvilla.php">
             <div class="item">
-                <div class="imagebox_acoommodation imh" style="background: url('assets/images/pv/50.jpg') right;">
+                <div class="imagebox_acoommodation imh" style="background: url('./web/assets/images/pv/50.jpg') right;">
                     <!-- <div class="name_accommodation">
 
                     </div> -->
