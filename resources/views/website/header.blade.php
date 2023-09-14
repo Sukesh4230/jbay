@@ -8,36 +8,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href={{ asset('website/assets/css/font-awesome.minbb23.css?ver=1.9.5') }} type="text/css"
-        media="all" />
-    <link rel="stylesheet" href={{ asset('website/assets/css/mystickyelements-front.minbb23.css?ver=1.9.5') }}
-        type="text/css" media="all" />
-    <link rel="stylesheet" href={{ asset('website/assets/css/all.css') }}>
-
-    <link rel="stylesheet" type="text/css" href={{ asset('website/assets/css/animate90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css" href={{ asset('website/assets/plugins/loading/css/loading90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/bootstrap/css/bootstrap90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/font_awesome/css/font-awesome.min90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/gallery_master/css/lightgallery.min90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/maximage/css/jquery.maximage.min90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/owl_carousel/css/owl.theme.default.min90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/owl_carousel/css/owl.carousel.min90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/ibe-widget2/css/jquery.ui90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/ibe-widget2/css/style.ibe290f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/plugins/validationEngine/css/validationEngine.jqueryc3d7.css?=v3?=v3') }}>
-    <link rel="stylesheet" type="text/css" href={{ asset('website/assets/css/style-junglebayresort90f6.css?=v3') }}>
-    <link rel="stylesheet" type="text/css"
-        href={{ asset('website/assets/css/responsive-junglebayresort90f6.css?=v3') }}>
+    <link href="{{ asset('web/assets/css/font-awesome.minbb23.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/css/mystickyelements-front.minbb23.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/css/all.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/css/animate90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/loading/css/loading90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/bootstrap/css/bootstrap90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/font_awesome/css/font-awesome.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/gallery_master/css/lightgallery.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/maximage/css/jquery.maximage.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.theme.default.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.carousel.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/ibe-widget2/css/jquery.ui90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/ibe-widget2/css/style.ibe290f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/validationEngine/css/validationEngine.jqueryc3d7.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/css/style-junglebayresort90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
+
+ 
+
+    
+    
+
+
+   
+   
+   
+  
+
+
+    
 
     <script type="text/javascript" src={{ asset('website/assets/js/jquery90f6.js?=v3') }}></script>
     <script type="text/javascript" src={{ asset('website/assets/js/javascript-junglebayresort90f6.js?=v3') }}></script>

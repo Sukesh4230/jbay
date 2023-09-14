@@ -9,7 +9,7 @@
                     <div class="ps-footer__widgets">
 
                         <div class="ps-footer__column ft-2">
-                            <img class="mb-lgo" src="/website/assets/images/icon/logo_w.png">
+                            <img class="mb-lgo" src="assets/images/icon/logo_w.png">
                             <div class="ps-widget ps-widget--footer ps-widget-footer-contact">
 
 
@@ -173,42 +173,8 @@
  -->
 
 
- <script type="text/javascript" src={{ asset('website/assets/js/jquery90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/js/javascript-junglebayresort90f6.js') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/loading/js/loading90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/bootstrap/js/bootstrap90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/maximage/js/jquery.maximage.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/maximage/js/jquery.cycle.all.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/owl_carousel/js/owl.carousel.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lightgallery.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-thumbnail.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-video.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-autoplay.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-zoom.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-hash.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/gallery_master/js/lg-pager.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript"
-        src={{ asset('website/assets/plugins/gallery_master/js/jquery.mousewheel.min90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/script.ibe90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/booking90f6.js?=v3') }}></script>
-    <script type="text/javascript" src={{ asset('website/assets/plugins/ibe-widget2/js/jquery.ui90f6.js?=v3') }}></script>
-    <script type="text/javascript"
-        src={{ asset('website/assets/plugins/validationEngine/js/jquery.validationEngine-en90f6.js?=v3') }}></script>
-    <script type="text/javascript"
-        src={{ asset('website/assets/plugins/validationEngine/js/jquery.validationEngine90f6.js?=v3') }}></script>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
- <script type="text/javascript" src={{ asset('website/dist/simple-lightbox.js') }}></script>
+
+<script src="dist/simple-lightbox.js?v2.2.1"></script>
 
 <script>
     (function() {
@@ -659,7 +625,7 @@ span.onclick = function() {
 }
 </script>
 
-   <script type="text/javascript" src={{ asset('website/assets/js/jquery.cookiebb23.js?ver=1.9.5') }} id="mystickyelements-cookie-js-js"></script>
+   <script type="text/javascript" src="assets/js/jquery.cookiebb23.js?ver=1.9.5" id="mystickyelements-cookie-js-js"></script>
     <script type="text/javascript">
       
         var mystickyelements = {
@@ -674,8 +640,7 @@ span.onclick = function() {
     });
       
     </script>
-    <script type="text/javascript" src={{ asset('website/assets/js/mystickyelements-fronted.minbb23.js?ver=1.9.5') }} id="mystickyelements-fronted-js-js"></script>
-   
+    <script type="text/javascript" src="assets/js/mystickyelements-fronted.minbb23.js?ver=1.9.5" id="mystickyelements-fronted-js-js"></script>
 
 
 
