@@ -15,7 +15,7 @@
     <script src="{{ asset('js/config.js') }}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="{{ asset('vendors/choices/choices.min.css') }}" rel="stylesheet" >
+    <link href="{{ asset('vendors/choices/choices.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/flatpickr/flatpickr.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/dropzone/dropzone.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendors/prism/prism-okaidia.css') }}" rel="stylesheet">
@@ -27,7 +27,9 @@
     <link href="{{ asset('css/theme.min.css') }}" type="text/css" rel="stylesheet" id="style-default">
     <link href="{{ asset('css/user-rtl.min.css') }}" type="text/css" rel="stylesheet" id="user-style-rtl">
     <link href="{{ asset('css/user.min.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         var isRTL = JSON.parse(localStorage.getItem('isRTL'));
         if (isRTL) {
@@ -43,4 +45,9 @@
             userLinkRTL.setAttribute('disabled', true);
         }
     </script>
+    <style>
+        .error {
+            color: red
+        }
+    </style>
 </head>

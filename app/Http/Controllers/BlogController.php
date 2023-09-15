@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Facades\App\Services\FileUpload;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -14,7 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        // $blogs=Blog::
+        $blogs = Blog::get();
+        return view('blog.index', compact('blogs'));
     }
 
     /**
@@ -35,9 +37,30 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        // return
+        $data = $this->get_data($request);
+        if ($request->id) {
+            $blog = Blog::findorFail($request->id);
+            $blog->update($data);
+        } else {
+            Blog::create($data);
+        }
+        return redirect()->route('blogs.index');
     }
 
+    public function get_data($request)
+    {
+        $data = [
+            'name' => $request->name,
+            'date' => $request->date,
+            'description' => $request->description,
+        ];
+        if ($request->file('image_url')) {
+            $file = $request->file('image_url');
+            $path = 'public/blogs/images/';
+            $data['image_url'] = 'blogs/images/' . FileUpload::storeFile($file, $path);
+        }
+        return $data;
+    }
     /**
      * Display the specified resource.
      *
@@ -57,7 +80,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return $blog;
     }
 
     /**
@@ -78,8 +101,10 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        //
+        $Blog = Blog::find($id);
+        $Blog->delete();
+        return response()->json(['status' => 'success', 'message' => 'Blog has been deleted']);
     }
 }

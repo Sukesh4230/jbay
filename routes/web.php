@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AmenityController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -113,6 +114,7 @@ Route::group(
         Route::get('delete-discover-slider-image/{id}', [DiscoverController::class, 'deleteSlider'])->name('delete-discover-slider-image');
 
         Route::resource('galleries', GalleryController::class);
+        Route::resource('blogs', BlogController::class);
 
     }
 );

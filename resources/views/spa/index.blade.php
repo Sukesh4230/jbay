@@ -270,7 +270,7 @@
                             <span class="fas fa-times fs--1"></span>
                         </button>
                     </div>
-                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data" name="Slider_form">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="type" value="slider">
@@ -311,13 +311,13 @@
                             class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data" name="main_form">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="id" id="edit_id">
                             <input type="hidden" name="type" value="service">
                             <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput">Price </label>
+                                <label class="form-label" for="exampleFormControlInput">Name </label>
                                 <input class="form-control" id="edit_name" type="text" disabled />
                             </div>
                             <div class="mb-3">
@@ -358,7 +358,8 @@
                             class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('spa.store') }} method="post" enctype="multipart/form-data"
+                        name="footer_form">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="type" value="footer">
@@ -409,28 +410,82 @@
 @endsection
 @section('page-js')
     <script>
-        $(".deleteSlider").click(function() {
+        // $(".deleteSlider").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-spa_slider-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#slider-row-' + id).remove();
+        //         }
+        //     });
+        // });
+
+        // $(".deleteFooter").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-spa_footer-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#footer-row-' + id).remove();
+        //         }
+        //     });
+        // });
+        $(document).on('click', '.deleteSlider', function() {
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-spa_slider-image', '') }}/" + id,
-                success: function() {
-                    $('#slider-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-spa_slider-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#slider-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
-            });
+
+            })
+
         });
 
-        $(".deleteFooter").click(function() {
+        $(document).on('click', '.deleteFooter', function() {
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-spa_footer-image', '') }}/" + id,
-                success: function() {
-                    $('#footer-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-spa_footer-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#footer-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
-            });
-        });
 
+            })
+
+        });
         $(document).on('click', '.edit_service', function() {
             var id = $(this).attr('id');
             var url = "{{ route('spa.edit', ':id') }}";
@@ -439,6 +494,50 @@
                 $('#edit_id').val(data.id);
                 $('#edit_name').val(data.name);
             })
+        });
+
+        $(document).ready(function() {
+            $("form[name='Slider_form']").validate({
+                rules: {
+                    image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    image_url: 'Slider image is required'
+                },
+                ignore: "",
+            });
+
+            $("form[name='main_form']").validate({
+                rules: {
+                    image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    image_url: 'Image is required'
+                },
+                ignore: "",
+            });
+
+            $("form[name='footer_form']").validate({
+                rules: {
+                    image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    image_url: 'Footer image is required'
+                },
+                ignore: "",
+            });
         });
     </script>
 @endsection

@@ -104,7 +104,8 @@
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('amenities_slider_upload') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('amenities_slider_upload') }} method="post" enctype="multipart/form-data"
+                        name="Slider_form">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
@@ -145,7 +146,8 @@
                             <span class="fas fa-times fs--1"></span>
                         </button>
                     </div>
-                    <form action={{ route('amenities.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('amenities.store') }} method="post" enctype="multipart/form-data"
+                        name="main_form_create">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
@@ -187,7 +189,8 @@
                             <span class="fas fa-times fs--1"></span>
                         </button>
                     </div>
-                    <form action={{ route('amenities.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('amenities.store') }} method="post" enctype="multipart/form-data"
+                        name="main_form_edit">
                         @csrf
                         <input type="hidden" name="id" id="edit_id">
                         <div class="modal-body">
@@ -263,32 +266,95 @@
 @endsection
 @section('page-js')
     <script>
-        $(".deleteDetails").click(function() {
+        // $(".deleteDetails").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         method: 'POST',
+        //         url: '{{ route('amenities.destroy', '') }}/' + id,
+        //         data: {
+        //             "_token": '{!! csrf_token() !!}',
+        //             _method: "DELETE",
+        //             id: id
+        //         },
+        //         success: function() {
+        //             $('#detail-row-' + id).remove();
+        //         }
+        //     });
+        // });
+
+        // $(".deleteSlider").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-amenity_slider-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#slider-row-' + id).remove();
+        //         }
+        //     });
+        // });
+
+        $(document).on('click', '.deleteDetails', function() {
             var id = $(this).data("id");
             var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                method: 'POST',
-                url: '{{ route('amenities.destroy', '') }}/' + id,
-                data: {
-                    "_token": '{!! csrf_token() !!}',
-                    _method: "DELETE",
-                    id: id
-                },
-                success: function() {
-                    $('#detail-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            method: 'POST',
+                            url: '{{ route('amenities.destroy', '') }}/' + id,
+                            data: {
+                                "_token": '{!! csrf_token() !!}',
+                                _method: "DELETE",
+                                id: id
+                            },
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#detail-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
-            });
+
+            })
+
         });
 
-        $(".deleteSlider").click(function() {
+        $(document).on('click', '.deleteSlider', function() {
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-amenity_slider-image', '') }}/" + id,
-                success: function() {
-                    $('#slider-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-amenity_slider-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#slider-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
-            });
+
+            })
+
         });
 
         $(document).on('click', '.edit_details', function() {
@@ -300,6 +366,62 @@
                 $('#edit_name').val(data.name);
                 $('#edit_description').val(data.description);
             })
+        });
+
+        $(document).ready(function() {
+            $("form[name='Slider_form']").validate({
+                rules: {
+                    image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    image_url: 'Slider image is required'
+                },
+                ignore: "",
+            });
+
+
+            $("form[name='main_form_create']").validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    description: {
+                        required: true,
+                    },
+                    image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+                },
+                messages: {
+                    description: 'Description is required',
+                    name: 'Title is required',
+                    image_url: 'Image is required',
+                },
+                ignore: "",
+            });
+
+            $("form[name='main_form_edit']").validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    description: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    description: 'Description is required',
+                    name: 'Title is required',
+                },
+                ignore: "",
+            });
+
+
         });
     </script>
 @endsection

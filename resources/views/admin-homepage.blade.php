@@ -83,13 +83,14 @@
                             <span class="fas fa-times fs--1"></span>
                         </button>
                     </div>
-                    <form action={{ route('home_slider_upload') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('home_slider_upload') }} method="post" enctype="multipart/form-data"
+                        name="Slider_form">
                         @csrf
                         <div class="modal-body">
 
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
-                                <input class="form-control" type="file" name="slider_image"/>
+                                <input class="form-control" type="file" name="slider_image" />
                                 <small class="float-end text-danger mt-2">image dimension:
                                     1600(width) x 1069(height)</small>
                             </div>
@@ -124,7 +125,7 @@
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('edit-home') }} method="post">
+                    <form action={{ route('edit-home') }} method="post" name="edit-home">
                         @csrf
                         <div class="modal-body">
 
@@ -187,14 +188,70 @@
 @endsection
 @section('page-js')
     <script>
-        $(".deleteSlider").click(function() {
+        // $(".deleteSlider").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-home_slider-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#slider-row-' + id).remove();
+        //         }
+        //     });
+        // });
+
+        $(document).on('click', '.deleteSlider', function() {
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-home_slider-image', '') }}/" + id,
-                success: function() {
-                    $('#slider-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-home_slider-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#slider-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
+
+            })
+
+        });
+        $(document).ready(function() {
+            $("form[name='Slider_form']").validate({
+                rules: {
+                    slider_image: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    slider_image: 'Slider image is required'
+                },
+                ignore: "",
+            });
+
+            $("form[name='edit-home']").validate({
+                rules: {
+                    description: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    description: 'Description is required'
+                },
+                ignore: "",
             });
         });
     </script>

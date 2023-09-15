@@ -111,7 +111,8 @@
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action="{{ route('room_slider_upload') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('room_slider_upload') }}" method="post" enctype="multipart/form-data"
+                        name="Slider_form">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="id" value="{{ $room->id }}">
@@ -153,14 +154,14 @@
                             <span class="fas fa-times fs--1"></span>
                         </button>
                     </div>
-                    <form action={{ route('stays.update', $room->id) }} method="post">
+                    <form action={{ route('stays.update', $room->id) }} method="post" name="main_form">
                         @csrf
                         @method('PATCH')
                         <div class="modal-body">
                             <input type="hidden" name="id" value="{{ $room->id }}">
                             <div class="mb-0">
                                 <label class="form-label" for="exampleTextarea">Content </label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" name="description"> {{ $room->description }} </textarea>
+                                <textarea class="form-control" id="exampleTextarea" rows="5" name="description"> {{ $room->description }} </textarea>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput">Price </label>
@@ -169,7 +170,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput">Extra Adult Price</label>
-                                <input class="form-control" id="exampleFormControlInput" type="number"
+                                <input class="form-control" id="extra_adult_price" type="number"
                                     name='extra_adult_price' value="{{ $room->extra_adult_price }}" />
                             </div>
                         </div>
@@ -203,13 +204,14 @@
                             class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action="{{ route('room_footer_upload') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('room_footer_upload') }}" method="POST" enctype="multipart/form-data"
+                        name="footer_form">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="id" value="{{ $room->id }}">
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
-                                <input class="form-control" type="file" name="footer_image"/>
+                                <input class="form-control" type="file" name="footer_image" />
                                 <small class="float-end text-danger mt-2">image dimension:
                                     1600(width) x 1069(height)</small>
                             </div>
@@ -254,25 +256,136 @@
 @endsection
 @section('page-js')
     <script>
-        $(".deleteSlider").click(function() {
-            var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-room_slider-image', '') }}/" + id,
-                success: function() {
-                    $('#slider-row-' + id).remove();
-                }
-            });
-        });
+        // $(".deleteSlider").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-room_slider-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#slider-row-' + id).remove();
+        //         }
+        //     });
+        // });
 
-        $(".deleteFooter").click(function() {
+        // $(".deleteFooter").click(function() {
+        //     var id = $(this).data("id");
+        //     var token = $("meta[name='csrf-token']").attr("content");
+        //     $.ajax({
+        //         url: "{{ route('delete-room_footer-image', '') }}/" + id,
+        //         success: function() {
+        //             $('#footer-row-' + id).remove();
+        //         }
+        //     });
+        // });
+        $(document).on('click', '.deleteSlider', function() {
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                url: "{{ route('delete-room_footer-image', '') }}/" + id,
-                success: function() {
-                    $('#footer-row-' + id).remove();
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-room_slider-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#slider-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
                 }
+
+            })
+
+        });
+        
+        $(document).on('click', '.deleteFooter', function() {
+            var id = $(this).data("id");
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                            url: "{{ route('delete-room_footer-image', '') }}/" + id,
+                        })
+                        .done(function(response) {
+                            swal.fire('Deleted!', 'Successfully deleted', 'success');
+                            $('#footer-row-' + id).remove();
+                        })
+                        .fail(function() {
+                            swal.fire('Oops...', 'Something went wrong', 'error');
+                        });
+                }
+
+            })
+
+        });
+        $(document).ready(function() {
+            $("form[name='Slider_form']").validate({
+                rules: {
+                    slider_image: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    slider_image: 'Slider image is required'
+                },
+                ignore: "",
+            });
+
+
+            $("form[name='main_form']").validate({
+                rules: {
+                    description: {
+                        required: true,
+                    },
+                    price: {
+                        required: true,
+                        number: true,
+                        min: 0,
+                        greaterThan: '#extra_adult_price',
+                    },
+                    extra_adult_price: {
+                        required: true,
+                        number: true,
+                        min: 0,
+                    },
+
+                },
+                messages: {
+                    description: 'Description is required',
+                    price: 'price is required',
+                    extra_adult_price: 'extra_adult_price is required',
+                },
+                ignore: "",
+            });
+
+            $("form[name='footer_form']").validate({
+                rules: {
+                    footer_image: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
+
+                },
+                messages: {
+                    footer_image: 'Footer image is required'
+                },
+                ignore: "",
             });
         });
     </script>

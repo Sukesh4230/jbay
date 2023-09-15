@@ -171,8 +171,8 @@
                     </div>
 
 
-                    <div class="nav-item-wrapper"><a class="nav-link label-1" href="/admin-blog" asd="index"
-                            role="button" data-bs-toggle="" aria-expanded="false">
+                    <div class="nav-item-wrapper"><a class="nav-link label-1" href={{ route('blogs.index') }}
+                            asd="index" role="button" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-icon"><span
                                         data-feather="file-text"></span></span><span
                                     class="nav-link-text-wrapper"><span class="nav-link-text">Blog</span></span>

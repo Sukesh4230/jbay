@@ -1,4 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <script src="{{ asset('vendors/popper/popper.min.js') }}"></script>
 <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendors/anchorjs/anchor.min.js') }}"></script>
@@ -20,9 +22,4 @@
 
 <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

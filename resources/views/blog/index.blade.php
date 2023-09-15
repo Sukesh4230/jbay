@@ -4,72 +4,51 @@
         <div class="mt-4">
 
             <div class="card">
-                <h5 class="card-header"><span data-feather="home" class="me-2"></span>Gallery</h5>
+                <h5 class="card-header"><span data-feather="home" class="me-2"></span>Blog</h5>
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="card-body">
 
 
-                            <h4 class="mt-4 mb-3 text-800">Gallery</h4>
+                            <h4 class="mt-4 mb-3 text-800">Blog</h4>
                             <button class="btn btn-primary float-end mb-2" type="button" data-bs-toggle="modal"
-                                data-bs-target="#verticallyCentered-1">Add Gallery Image</button>
+                                data-bs-target="#verticallyCentered-1">Add Content Image</button>
                             <table class="table table-bordered border-primary">
                                 <thead>
                                     <tr>
 
                                         <th class="p-2" scope="col">Image</th>
-                                        <th class="p-2" scope="col">Category</th>
+                                        <th class="p-2" scope="col">Title</th>
                                         <th class="p-2" scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($galleryImages as $galleryImage)
-                                        <tr id="detail-row-{{ $galleryImage->id }}">
+                                    @foreach ($blogs as $blog)
+                                        <tr id="detail-row-{{ $blog->id }}">
+
                                             <td class="p-2">
-                                                <div class="avatar avatar-4xl ">
-                                                    @if ($galleryImage->image_url)
-                                                        <div class="avatar avatar-4xl ">
-                                                            <img class="rounded-none " alt=""
-                                                                src="{{ asset('storage/' . $galleryImage->image_url) }}" />
-                                                        </div>
-                                                    @endif
-                                                </div>
+                                                @if ($blog->image_url)
+                                                    <div class="avatar avatar-4xl ">
+                                                        <img class="rounded-none "
+                                                            src="{{ asset('storage/' . $blog->image_url) }}"
+                                                            alt="" />
+                                                    </div>
+                                                @endif
+
                                             </td>
-                                            <td class="p-2">{{ $galleryImage->gallery->name ?? '' }}</td>
+                                            <td class="p-2">{{ $blog->name }}</td>
                                             <td class="p-2">
                                                 <button class="btn btn-phoenix-danger me-1 mb-1 deleteDetails"
-                                                    data-id="{{ $galleryImage->id }}" type="button"> Delete
+                                                    data-id="{{ $blog->id }}" type="button"> Delete
                                                 </button>
                                                 <button class="btn btn-phoenix-info me-1 mb-1 edit_details" type="button"
-                                                    data-bs-target="#verticallyCentered-2" id="{{ $galleryImage->id }}"
+                                                    data-bs-target="#verticallyCentered-2" id="{{ $blog->id }}"
                                                     data-bs-toggle="modal">
                                                     edit
                                                 </button>
                                             </td>
                                         </tr>
                                     @endforeach
-
-                                    {{-- @foreach ($galleryImages as $galleryImage)
-                                        <tr>
-
-                                            <td class="p-2">
-                                                <div class="avatar avatar-4xl ">
-                                                    <img class="rounded-none "
-                                                        src="https://www.junglebayresorts.com/assets/images/pv/50.jpg"
-                                                        alt="" />
-                                                </div>
-                                            </td>
-                                            <td class="p-2">Restaurant</td>
-                                            <td class="p-2">
-
-                                                <button class="btn btn-phoenix-danger me-1 mb-1"
-                                                    type="button">Delete</button>
-                                                <button class="btn btn-phoenix-info me-1 mb-1" type="button"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#verticallyCentered-1">edit</button>
-                                            </td>
-                                        </tr>
-                                    @endforeach --}}
 
 
                                 </tbody>
@@ -95,28 +74,43 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="verticallyCenteredModalLabel-1">Gallery</h5><button class="btn p-1"
+                        <h5 class="modal-title" id="verticallyCenteredModalLabel-1">Blog</h5><button class="btn p-1"
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('galleries.store') }} method="post" enctype="multipart/form-data"
-                        name="main_form_create">
+                    <form action={{ route('blogs.store') }} method="post" name="main_form_create"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Title </label>
+                                <input class="form-control" id="exampleFormControlInput" type="text" name="name" />
+                            </div>
+
+
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="image_url" />
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="organizerSingle">Date</label>
+                                <input class="form-control datetimepicker" id="datepicker" type="text" name="date"
+                                    placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"dateFormat":"Y-m-d"}' />
+
+
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="organizerSingle">Category</label>
-                                <select class="form-select" id="organizerSingle" data-choices="data-choices"
-                                    data-options='{"removeItemButton":true,"placeholder":true}' name="gallery_id">
-                                    <option value="">Select organizer...</option>
-                                    @foreach ($galleries as $gallery)
-                                        <option value="{{ $gallery->id }}">{{ $gallery->name }}</option>
-                                    @endforeach
-                                </select>
+                                <label class="form-label" for="organizerSingle">Content</label>
+                                <textarea class="form-control" rows="3" name="description" data-tinymce="{}"></textarea>
+
+
                             </div>
+
+
+
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Submit</button>
@@ -132,27 +126,45 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="verticallyCenteredModalLabel-1">Gallery</h5><button class="btn p-1"
+                        <h5 class="modal-title" id="verticallyCenteredModalLabel-1">Blog</h5><button class="btn p-1"
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('galleries.store') }} method="post" enctype="multipart/form-data">
+                    <form action={{ route('blogs.store') }} method="post" name="main_form_create"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
-                            <input type="hidden" name="id" id="edit_id">
+                            <input type="text" name="id" id="edit_id">
+
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Title </label>
+                                <input class="form-control" id="edit_name" type="text" name="name" />
+                            </div>
+
+
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="image_url" />
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="organizerSingle">Date</label>
+                                <input class="form-control datetimepicker" id="datepicker" type="text" name="date"
+                                    id="edit_date" placeholder="dd/mm/yyyy"
+                                    data-options='{"disableMobile":true,"dateFormat":"Y-m-d"}' />
+
+
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="organizerSingle">Category</label>
-                                <select class="form-select" id="edit_gallery_id" name="gallery_id">
-                                    <option value="">Select organizer...</option>
-                                    @foreach ($galleries as $gallery)
-                                        <option value="{{ $gallery->id }}">{{ $gallery->name }}</option>
-                                    @endforeach
-                                </select>
+                                <label class="form-label" for="organizerSingle">Content</label>
+                                <textarea class="form-control" rows="3" name="description" data-tinymce="{}" id="edit_description"></textarea>
+
+
                             </div>
+
+
+
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Submit</button>
@@ -208,23 +220,17 @@
 @endsection
 @section('page-js')
     <script>
-        // $(".deleteDetails").click(function() {
-        //     var id = $(this).data("id");
-        //     var token = $("meta[name='csrf-token']").attr("content");
-        //     $.ajax({
-        //         method: 'POST',
-        //         url: '{{ route('galleries.destroy', '') }}/' + id,
-        //         data: {
-        //             "_token": '{!! csrf_token() !!}',
-        //             _method: "DELETE",
-        //             id: id
-        //         },
-        //         success: function() {
-        //             $('#detail-row-' + id).remove();
-        //         }
-        //     });
-        // });
-
+        $(document).on('click', '.edit_details', function() {
+            var id = $(this).attr('id');
+            var url = "{{ route('blogs.edit', ':id') }}";
+            url = url.replace(':id', id);
+            $.get(url, function(data) {
+                $('#edit_id').val(data.id);
+                $('#edit_name').val(data.name);
+                $('#edit_date').val(data.date);
+                $('#edit_description').val(data.description);
+            })
+        });
         $(document).on('click', '.deleteDetails', function() {
             var id = $(this).data("id");
             var token = $("meta[name='csrf-token']").attr("content");
@@ -240,7 +246,7 @@
                 if (result.value) {
                     $.ajax({
                             method: 'POST',
-                            url: '{{ route('galleries.destroy', '') }}/' + id,
+                            url: '{{ route('blogs.destroy', '') }}/' + id,
                             data: {
                                 "_token": '{!! csrf_token() !!}',
                                 _method: "DELETE",
@@ -257,66 +263,6 @@
                 }
 
             })
-
-        });
-
-        $(document).on('click', '.edit_details', function() {
-            var id = $(this).attr('id');
-            var url = "{{ route('galleries.edit', ':id') }}";
-            url = url.replace(':id', id);
-            $.get(url, function(data) {
-                console.log(data);
-                $('#edit_gallery_id').val(data.gallery_id);
-                $('#edit_id').val(data.id);
-                // $('#edit_description').val(data.description);
-            })
-        });
-
-        $(document).ready(function() {
-            $("form[name='Slider_form']").validate({
-                rules: {
-                    image_url: {
-                        required: true,
-                        extension: "jpg|jpeg|png",
-                    },
-
-                },
-                messages: {
-                    image_url: 'Slider image is required'
-                },
-                ignore: "",
-            });
-
-
-            $("form[name='main_form_create']").validate({
-                rules: {
-                    gallery_id: {
-                        required: true,
-                    },
-                    image_url: {
-                        required: true,
-                        extension: "jpg|jpeg|png",
-                    },
-                },
-                messages: {
-                    gallery_id: 'Select Gallery',
-                    image_url: 'Image is required',
-                },
-                ignore: "",
-            });
-
-            $("form[name='main_form_edit']").validate({
-                rules: {
-                    gallery_id: {
-                        required: true,
-                    },
-                },
-                messages: {
-                    gallery_id: 'Select Gallery',
-                },
-                ignore: "",
-            });
-
 
         });
     </script>
