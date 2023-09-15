@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Room;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RoomSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Room::truncate();
         $names = [
             'Duke’s Pool Villa',
@@ -27,5 +29,7 @@ class RoomSeeder extends Seeder
         foreach ($names as $name) {
             Room::create(['name' => $name]);
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
     }
 }
