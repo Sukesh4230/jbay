@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Gallery;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GallerySeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class GallerySeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Gallery::truncate();
         $names = [
             'Spa',
@@ -26,5 +28,7 @@ class GallerySeeder extends Seeder
         foreach ($names as $name) {
             Gallery::create(['name' => $name]);
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
     }
 }

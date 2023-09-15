@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\SpaService;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SpaServiceSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class SpaServiceSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         SpaService::truncate();
         $names = [
             'Abhyanga',
@@ -30,5 +33,7 @@ class SpaServiceSeeder extends Seeder
         foreach ($names as $name) {
             SpaService::create(['name' => $name]);
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
     }
 }
