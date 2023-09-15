@@ -64,6 +64,19 @@
                             </table>
 
 
+                            <button class="btn btn-primary" id="liveToastBtn" type="button">Show live toast</button>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+  <div class="toast fade" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Bootstrap</strong>
+      <small class="text-800">11 mins ago</small>
+      <button class="btn ms-2 p-0" type="button" data-bs-dismiss="toast" aria-label="Close"><span class="uil uil-times fs-1"></span></button>
+    </div>
+    <div class="toast-body">Hello, world! This is a toast message.</div>
+  </div>
+</div>
+
+
 
 
                         </div>
