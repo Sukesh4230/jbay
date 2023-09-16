@@ -78,4 +78,10 @@ class HomeController extends Controller
         $discovers = Discover::latest()->get();
         return view('website.wayanad', compact('sliders', 'discovers'));
     }
+
+    public function room($id)
+    {
+        $room = Room::with('sliders', 'footers')->findorFail($id);
+        return view('website.room', compact('room'));
+    }
 }
