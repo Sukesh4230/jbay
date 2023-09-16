@@ -11,6 +11,12 @@ class Room extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'rooms';
     protected $guarded = [];
+    const DUKE = 1;
+    const BEETLE = 2;
+    const REGAL = 3;
+    const BOUGAIN = 4;
+    const PAVILION = 5;
+    const PENT = 6;
 
     public function sliders()
     {
@@ -20,5 +26,10 @@ class Room extends Model
     public function footers()
     {
         return $this->hasMany(RoomFooter::class, 'room_id', 'id');
+    }
+
+    public function defaultImage()
+    {
+        return $this->hasOne(RoomSlider::class, 'room_id', 'id');
     }
 }

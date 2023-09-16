@@ -1,64 +1,66 @@
-   <?php include 'header1.php';?>
+   @extends('website.header')
 
-      <style type="text/css">
-       
+   <style type="text/css">
        .owl-prev {
-    position: absolute;
-    left: 50px;
-    top: 0px;
-}
+           position: absolute;
+           left: 50px;
+           top: 0px;
+       }
 
-.owl-next {
-    position: absolute;
-    right: 50px;
-    top: 0px;
-}
-</style>
+       .owl-next {
+           position: absolute;
+           right: 50px;
+           top: 0px;
+       }
+   </style>
 
- <div id="maximage">
-            <div class="mc-image">
-                <div class="overlay_slide">
-                    <img class="laptop-img" src="assets/images/facilities/spa/1.jpg">
-                    <img class="mobile-img" src="assets/images/sp1.jpg">
+   <div id="maximage">
+       @foreach ($sliders ?? [] as $slider)
+           <div class="mc-image">
+               <div class="overlay_slide">
+                   <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
+                   <img class="mobile-img" src={{ asset('storage/' . $slider->image_url) }}>
 
-                    <div class="text_slide text_slide2">
-                        <ul>
-                            <li>
+                   <div class="text_slide text_slide2">
+                       <ul>
+                           <li>
                                <!--  <h1 class="mt-55">Wellness</h1> -->
-                            </li>
-                            <li>
-                                <!-- <p>Selection of accommodation and warmly service from Bundhaya. </p> -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mc-image">
-                <div class="overlay_slide">
-                    <img class="laptop-img" src="assets/images/facilities/spa/2.jpg">
-                    <img class="mobile-img" src="assets/images/sp2.jpg">
+                           </li>
+                           <li>
+                               <!-- <p>Selection of accommodation and warmly service from Bundhaya. </p> -->
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       @endforeach
 
-                    <div class="text_slide text_slide2">
-                        <ul>
-                            <li>
-                                <!-- <h1 class="mt-55">Wellness</h1> -->
-                            </li>
-                            <li>
-                               <!--  <p>Selection of accommodation and warmly service from Bundhaya. </p> -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-       
-          
-            
-    
-    
+       {{-- <div class="mc-image">
+           <div class="overlay_slide">
+               <img class="laptop-img" src="assets/images/facilities/spa/2.jpg">
+               <img class="mobile-img" src="assets/images/sp2.jpg">
 
-        </div>
+               <div class="text_slide text_slide2">
+                   <ul>
+                       <li>
+                           <!-- <h1 class="mt-55">Wellness</h1> -->
+                       </li>
+                       <li>
+                           <!--  <p>Selection of accommodation and warmly service from Bundhaya. </p> -->
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div> --}}
 
-<!--         <section class="section_ibe">
+
+
+
+
+
+   </div>
+
+   <!--         <section class="section_ibe">
     <div id="book"></div>
     <form name="form_booking" action="https://ibe.hoteliers.guru/ibe/search-room-rate" method="get"
           onSubmit="return fncSubmit();">
@@ -199,547 +201,559 @@
 </section> -->
 
 
-<section id="section_scrolldown" class="demo">
-    <a href="#scrolldown"><span></span></a>
-</section>
+   <section id="section_scrolldown" class="demo">
+       <a href="#scrolldown"><span></span></a>
+   </section>
 
-<div class="section_arrow_slide">
-    <a href="#" id="arrow_left">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
-    </a>
-    <a href="#" id="arrow_right">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
-    </a>
-</div>
+   <div class="section_arrow_slide">
+       <a href="#" id="arrow_left">
+           <i class="fa fa-angle-left" aria-hidden="true"></i>
+       </a>
+       <a href="#" id="arrow_right">
+           <i class="fa fa-angle-right" aria-hidden="true"></i>
+       </a>
+   </div>
 
-<div class="section_bundhayaphoto">
-    <p>
-        <span class="text_orange"></span> 
-    </p>
-</div>
-    </section>
+   <div class="section_bundhayaphoto">
+       <p>
+           <span class="text_orange"></span>
+       </p>
+   </div>
+   </section>
 
-    <section class="section_welcome section_accommodationpage ">
+   <section class="section_welcome section_accommodationpage ">
 
-        <div class="container mt-55">
+       <div class="container mt-55">
 
-              <h1 class="mt-55">
-            Bhoomi - The Ayurvedic Spa
-        </h1>
-       <!--  <p class="text_text_orange">
+           <h1 class="mt-55">
+               Bhoomi - The Ayurvedic Spa
+           </h1>
+           <!--  <p class="text_text_orange">
             Relax your body & Restore your spirit & Relax your mind
         </p> -->
-        <p>
-         The Ayurvedic spa at Jungle Bay is one of the best in the region. It has two therapy rooms and
-aesthetically designed interiors. There are full time therapists and a doctor on call here.
-        </p>
+           <p>
+               The Ayurvedic spa at Jungle Bay is one of the best in the region. It has two therapy rooms and
+               aesthetically designed interiors. There are full time therapists and a doctor on call here.
+           </p>
 
-        <p>
-            Ayurveda is one of the oldest healing system in the world with historical roots in the Indian
-subcontinent . Kerala is the ideal destination to explore Ayurveda and its benefits.
-        </p>
+           <p>
+               Ayurveda is one of the oldest healing system in the world with historical roots in the Indian
+               subcontinent . Kerala is the ideal destination to explore Ayurveda and its benefits.
+           </p>
 
-        <p>
-            As per Ayurveda the three basic bodily doshas , are vata (space or air, equated with the nervous
-system), pitta (fire, equated with enzymes), and kapha (earth and water, equated with
-mucus). Ayurveda has eight ways to diagnose illness, called Nadi (pulse), Mootra
-(urine), Mala (stool), Jihva (tongue), Shabda (speech), Sparsha (touch), Druk (vision), and Aakruti
-(appearance).
-        </p>
-
-
-        
-
-            
-        </div>
-
-        <div class="und">
-                                   
-        </div>
-
-      
+           <p>
+               As per Ayurveda the three basic bodily doshas , are vata (space or air, equated with the nervous
+               system), pitta (fire, equated with enzymes), and kapha (earth and water, equated with
+               mucus). Ayurveda has eight ways to diagnose illness, called Nadi (pulse), Mootra
+               (urine), Mala (stool), Jihva (tongue), Shabda (speech), Sparsha (touch), Druk (vision), and Aakruti
+               (appearance).
+           </p>
 
 
-       
-        
-    </section>
-
-    <section>
-        <div class="container mt-55">
-
-            <div class="row mt-55">
-
-                  <div class="col-md-6 ">
-                <div class="owl-carousel owl-theme slide_contentchild ">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
 
 
-            <div class="col-md-6 pad-20">
-                  <h1 class="mt-55">Abhyanga <small>(Full body Oil Massage)</small></h1>
-       <p>Uzhichil, also known as Abhyanga, is an extremely beneficial oil massage, where large quantities of
-oil infused with herbs are used to carry out a deep massage. The benefits of the herbs are spread
-throughout the body during the massage, and are absorbed by the skin, while the powerful strokes
-stimulate the body’s blood and lymphatic circulation. The therapy lasts around 45 minutes.</p>
-            </div>
 
-        </div>
+       </div>
+
+       <div class="und">
+
+       </div>
+
+
+
+
+
+
+   </section>
+
+   <section>
+       <div class="container mt-55">
+
+           <div class="row mt-55">
+
+               <div class="col-md-6 ">
+                   <div class="owl-carousel owl-theme slide_contentchild ">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Abhyanga ?? '') }}) right;">
+
+
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Abhyanga ?? '') }}) right;">
+
+
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Abhyanga ?? '') }}) right;">
+
+
+                           </div>
+                       </div>
+
+                   </div>
+
+               </div>
+
+
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Abhyanga <small>(Full body Oil Massage)</small></h1>
+                   <p>Uzhichil, also known as Abhyanga, is an extremely beneficial oil massage, where large quantities
+                       of
+                       oil infused with herbs are used to carry out a deep massage. The benefits of the herbs are spread
+                       throughout the body during the massage, and are absorbed by the skin, while the powerful strokes
+                       stimulate the body’s blood and lymphatic circulation. The therapy lasts around 45 minutes.</p>
+               </div>
+
+           </div>
 
 
 
            <div class="row mt-1">
-             <div class="col-md-6 pad-20">
-                <h1 class="mt-55">Shirodhara <small>(Full body and Head massage)</small></h1>
-<p>It’s an Ayurvedic healing technique that involves pouring oil onto your forehead after you lie on your
-back. It’s often combined with a scalp, or head massage. There would be a fully body massage also
-along with this. The liquid will be heated to match with your body temperature. The therapy lasts for
-around 1 hour.</p>
-                
-            </div>
-              <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-           
-
-
-                
-            </div>
-
-            <div class="row">
-                 <div class="col-md-6 ">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/3.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/3.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/3.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-            <div class="col-md-6  pad-20">
-                  <h1 class="mt-55">Shiro Abhyanga <small>(Head Massage)</small></h1>
-       <p>This is performed by pouring a gentle, steady and relaxing stream of herbal massage oil on to your
-scalp, forehead and neck.This involves a complete massage and relaxation of the upper body. It
-helps in treating hair loss, scalp dryness and dandruff. The therapy lasts for around 30 minutes.</p>
-            </div>
-                
-            </div>
-
-             <div class="row">
-
-                <div class="col-md-6 pad-20">
-                <h1 class="mt-55">Pada Abhyanga <small>(Foot Massage)</small></h1>
-<p>The feet are known to be the seat of the meridians with many nerve endings and Marma. In this
-therapy the feet are massaged in a synchronous way, from the ankle, the toes up to the soles, with a
-focus on certain pressure points and Marmas. The therapy lasts for around 30 minutes.</p>
-                
-            </div>
-
-
-                                 <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.png') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.png') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/1.png') right;">
-                            
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-                
-            
-            
-            
-                
-            </div>
-
-
-            <div class="row">
-
-                               <div class="col-md-6 ">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/4.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/4.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/4.jpg') right;">
-                            
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-             <div class="col-md-6 pad-20 ">
-                  <h1 class="mt-55">Mukha lepam <small>(Face Massage and face pack)</small></h1>
-       <p>In this treatment, first the face is gently massaged is with a medicated oil which is followed by
-steaming with herbally treated steam. Then, a medicated paste is applied on the entire face and
-
-retained till the paste is completely dry. This is used to treat pimples, remove acne scars and to
-make the complexion soft, smooth and glowing. The therapy lasts for around 30 minutes.</p>
-            </div>
-                
-            </div>
-
-             <div class="row">
-
-                 <div class="col-md-6 pad-20">
-                <h1 class="mt-55">Udwarthanam <small>(Full Body Scrub)</small></h1>
-<p>Udvartana is an invigorating full body massage done in a rhythmic motion using herbal powder or
-paste. The powder is slightly warmed, and spread over the body through a dry massage. The
-invigorating stroke actions, coupled with the dry coarse powder activates the metabolic rate. This
-therapy is largely recommended for diabetic neuropathy, obesity, paralysis, skin care and
-indigestion. The therapy lasts for around 1 hour.</p>
-                
-            </div>
-
-                               <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/5.jpg') right;"> 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/5.jpg') right;">                
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/5.jpg') right;">
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-                
-           
-            
-           
-                
-            </div>
-
-            <div class="row">
-
-                <div class="col-md-6 ">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/6.jpg') right;"> 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/6.jpg') right;">                
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/6.jpg') right;">
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-                  <div class="col-md-6  pad-20">
-                  <h1 class="mt-55">Podikizhi <small>(Full body oil and Powder massage)</small></h1>
-       <p>This involves full body massage using kizhis (cotton pouch) with a mixture of herbs, dipped in
-medicated oils. It is also applied without oil if dry heat is necessary. It is effective in treating the
-joints, spine, lower back, and muscles.The therapy lasts for around 1 hour.</p>
-            </div>
-                
-            </div>
-
-             <div class="row">
-                 <div class="col-md-6 pad-20">
-                <h1 class="mt-55">Pizhichil <small>(Full body oil rejuvenation)</small></h1>
-<p>Pizhichil involves soft massage of the whole body in streams of lukewarm medicated oils. A special
-linen cloth is dipped into a medicated oil mixture, and squeezed over the body. It improve blood
-circulation and eliminate toxins from your body. The therapy lasts for around 1 hour.</p>
-                
-            </div>
-
-                           <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/7.jpg') right;"> 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/7.jpg') right;">                
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/7.jpg') right;">
-
-                        </div>
-                    </div>
-
-                </div>
-         
-            </div>
-
-                
-      
-          
-           
-                
-            </div>
-
-            <div class="row">
-
-                  <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/8.jpg') right;"> 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/8.jpg') right;">                
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/8.jpg') right;">
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Shirodhara <small>(Full body and Head massage)</small></h1>
+                   <p>It’s an Ayurvedic healing technique that involves pouring oil onto your forehead after you lie on
+                       your
+                       back. It’s often combined with a scalp, or head massage. There would be a fully body massage also
+                       along with this. The liquid will be heated to match with your body temperature. The therapy lasts
+                       for
+                       around 1 hour.</p>
 
-                        </div>
-                    </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Shirodhara ?? '') }}) right;">
 
-                </div>
-         
-            </div>
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Shirodhara ?? '') }}) right;">
 
-            <div class="col-md-6 pad-20">
-                  <h1 class="mt-55">Ayurvedic Pedicure</h1>
-       <p>This includes soaking your feet in a warm tub for a couple of minutes followed by a foot-scrub and a
-holistic massage of the feet that would finally leave your skin feeling supple and fresh. Enhanced
-blood circulation, relaxation of the mind and relief from pain are some of the benefits one gets
-through a pedicure. The therapy lasts for around 30 minutes.</p>
-            </div>
-                
-            </div>
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Shirodhara ?? '') }}) right;">
 
-            <div class="row">
 
-                 <div class="col-md-6 pad-20">
-                <h1 class="mt-55">Prishta Abhyanga <small>(Back massage)</small></h1>
-<p>Prishta Abhyanga is a lower back and legs massage with Ayurvedic herbal oil. By working on the
-muscles, tendons, ligaments and joints the massage can improve flexibility and the range of motion
-of the joints. It is recommended for back and joint pains. The therapy lasts for around 30 minutes.</p>
-                
-            </div>
+                           </div>
+                       </div>
 
+                   </div>
 
-                  <div class="col-md-6">
-                <div class="owl-carousel owl-theme slide_contentchild">
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.png') right;"> 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.png') right;">                
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagebox_acoommodation imh"
-                             style="background: url('assets/images/2/2.png') right;">
+               </div>
 
-                        </div>
-                    </div>
 
-                </div>
-         
-            </div>
 
-                
-            
-            
-           
-                
-            </div>
 
+           </div>
 
+           <div class="row">
+               <div class="col-md-6 ">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $ShiroAbhyanga ?? '') }}) right;">
 
-      
 
-          
-          
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $ShiroAbhyanga ?? '') }}) right;">
 
-          
-        
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $ShiroAbhyanga ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
 
+                   </div>
 
+               </div>
 
+               <div class="col-md-6  pad-20">
+                   <h1 class="mt-55">Shiro Abhyanga <small>(Head Massage)</small></h1>
+                   <p>This is performed by pouring a gentle, steady and relaxing stream of herbal massage oil on to your
+                       scalp, forehead and neck.This involves a complete massage and relaxation of the upper body. It
+                       helps in treating hair loss, scalp dryness and dandruff. The therapy lasts for around 30 minutes.
+                   </p>
+               </div>
 
+           </div>
 
+           <div class="row">
 
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Pada Abhyanga <small>(Foot Massage)</small></h1>
+                   <p>The feet are known to be the seat of the meridians with many nerve endings and Marma. In this
+                       therapy the feet are massaged in a synchronous way, from the ankle, the toes up to the soles,
+                       with a
+                       focus on certain pressure points and Marmas. The therapy lasts for around 30 minutes.</p>
 
+               </div>
 
 
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PadaAbhyanga ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PadaAbhyanga ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PadaAbhyanga ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
 
+                   </div>
 
+               </div>
 
 
 
 
 
 
+           </div>
 
 
+           <div class="row">
 
+               <div class="col-md-6 ">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Mukhalepam ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Mukhalepam ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Mukhalepam ?? '') }}) right;">
 
 
+                           </div>
+                       </div>
 
+                   </div>
 
+               </div>
 
+               <div class="col-md-6 pad-20 ">
+                   <h1 class="mt-55">Mukha lepam <small>(Face Massage and face pack)</small></h1>
+                   <p>In this treatment, first the face is gently massaged is with a medicated oil which is followed by
+                       steaming with herbally treated steam. Then, a medicated paste is applied on the entire face and
 
+                       retained till the paste is completely dry. This is used to treat pimples, remove acne scars and
+                       to
+                       make the complexion soft, smooth and glowing. The therapy lasts for around 30 minutes.</p>
+               </div>
 
+           </div>
 
+           <div class="row">
 
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Udwarthanam <small>(Full Body Scrub)</small></h1>
+                   <p>Udvartana is an invigorating full body massage done in a rhythmic motion using herbal powder or
+                       paste. The powder is slightly warmed, and spread over the body through a dry massage. The
+                       invigorating stroke actions, coupled with the dry coarse powder activates the metabolic rate.
+                       This
+                       therapy is largely recommended for diabetic neuropathy, obesity, paralysis, skin care and
+                       indigestion. The therapy lasts for around 1 hour.</p>
 
+               </div>
 
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Udwarthanam ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Udwarthanam ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Udwarthanam ?? '') }}) right;">
 
+                           </div>
+                       </div>
 
+                   </div>
 
+               </div>
 
 
 
 
 
 
+           </div>
 
+           <div class="row">
 
+               <div class="col-md-6 ">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Podikizhi ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Podikizhi ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Podikizhi ?? '') }}) right;">
 
-            
-        </div>
-        
-    </section>
+                           </div>
+                       </div>
+
+                   </div>
+
+               </div>
+
+               <div class="col-md-6  pad-20">
+                   <h1 class="mt-55">Podikizhi <small>(Full body oil and Powder massage)</small></h1>
+                   <p>This involves full body massage using kizhis (cotton pouch) with a mixture of herbs, dipped in
+                       medicated oils. It is also applied without oil if dry heat is necessary. It is effective in
+                       treating the
+                       joints, spine, lower back, and muscles.The therapy lasts for around 1 hour.</p>
+               </div>
+
+           </div>
+
+           <div class="row">
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Pizhichil <small>(Full body oil rejuvenation)</small></h1>
+                   <p>Pizhichil involves soft massage of the whole body in streams of lukewarm medicated oils. A special
+                       linen cloth is dipped into a medicated oil mixture, and squeezed over the body. It improve blood
+                       circulation and eliminate toxins from your body. The therapy lasts for around 1 hour.</p>
+
+               </div>
+
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pizhichil ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pizhichil ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pizhichil ?? '') }}) right;">
+
+                           </div>
+                       </div>
+
+                   </div>
+
+               </div>
+
+
+
+
+
+
+           </div>
+
+           <div class="row">
+
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pedicure ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pedicure ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $Pedicure ?? '') }}) right;">
+
+                           </div>
+                       </div>
+
+                   </div>
+
+               </div>
+
+
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Ayurvedic Pedicure</h1>
+                   <p>This includes soaking your feet in a warm tub for a couple of minutes followed by a foot-scrub and
+                       a
+                       holistic massage of the feet that would finally leave your skin feeling supple and fresh.
+                       Enhanced
+                       blood circulation, relaxation of the mind and relief from pain are some of the benefits one gets
+                       through a pedicure. The therapy lasts for around 30 minutes.</p>
+               </div>
+
+           </div>
+
+
+           <div class="row">
+
+               <div class="col-md-6 pad-20">
+                   <h1 class="mt-55">Prishta Abhyanga <small>(Back massage)</small></h1>
+                   <p>Prishta Abhyanga is a lower back and legs massage with Ayurvedic herbal oil. By working on the
+                       muscles, tendons, ligaments and joints the massage can improve flexibility and the range of
+                       motion
+                       of the joints. It is recommended for back and joint pains. The therapy lasts for around 30
+                       minutes.</p>
+
+               </div>
+
+
+               <div class="col-md-6">
+                   <div class="owl-carousel owl-theme slide_contentchild">
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PrishtaAbhyanga ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PrishtaAbhyanga ?? '') }}) right;">
+                           </div>
+                       </div>
+                       <div class="item">
+                           <div class="imagebox_acoommodation imh"
+                               style="background: url({{ asset('storage/' . $PrishtaAbhyanga ?? '') }}) right;">
+
+                           </div>
+                       </div>
+
+                   </div>
+
+               </div>
+
+
+
+
+
+
+           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       </div>
+
+   </section>
 
    <!--  <section class="section_contentchild">
         <div class="titlename">
@@ -1366,34 +1380,44 @@ of the joints. It is recommended for back and joint pains. The therapy lasts for
             </div>
         </div> -->
 
-        <div class="row_contentchild">
-            <div class="owl-carousel owl-theme slide_photo">
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/spa-02.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/1.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/spa-04.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/spa-05.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/2.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/1.jpg') right;"></div>
-                </div>
-                <div class="item">
-                    <div class="imagebox_acoommodation imh" style="background: url('assets/images/facilities/spa/spa-04.jpg') right;"></div>
-                </div>
+   <div class="row_contentchild">
+       <div class="owl-carousel owl-theme slide_photo">
+           @foreach ($footers ?? [] as $footer)
+               <div class="item">
+                   <div class="imagebox_acoommodation imh"
+                       style="background: url({{ asset('storage/' . $footer->image_url) }}) right;">
+                   </div>
+               </div>
+           @endforeach
 
-            </div>
-        </div>
+           {{-- <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/1.jpg') right;"></div>
+           </div>
+           <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/spa-04.jpg') right;"></div>
+           </div>
+           <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/spa-05.jpg') right;"></div>
+           </div>
+           <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/2.jpg') right;"></div>
+           </div>
+           <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/1.jpg') right;"></div>
+           </div>
+           <div class="item">
+               <div class="imagebox_acoommodation imh"
+                   style="background: url('assets/images/facilities/spa/spa-04.jpg') right;"></div>
+           </div> --}}
 
-    </section>
+       </div>
+   </div>
 
-      <?php include 'footer.php';?>
+   </section>
 
+   @extends('website.footer')

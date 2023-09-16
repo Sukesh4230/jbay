@@ -14,34 +14,40 @@
     <link href="{{ asset('web/assets/css/animate90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/loading/css/loading90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/bootstrap/css/bootstrap90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/font_awesome/css/font-awesome.min90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/gallery_master/css/lightgallery.min90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/maximage/css/jquery.maximage.min90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.theme.default.min90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.carousel.min90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/font_awesome/css/font-awesome.min90f6.css') }}" type="text/css"
+        rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/gallery_master/css/lightgallery.min90f6.css') }}" type="text/css"
+        rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/maximage/css/jquery.maximage.min90f6.css') }}" type="text/css"
+        rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.theme.default.min90f6.css') }}" type="text/css"
+        rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/owl_carousel/css/owl.carousel.min90f6.css') }}" type="text/css"
+        rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/ibe-widget2/css/jquery.ui90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/ibe-widget2/css/style.ibe290f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/validationEngine/css/validationEngine.jqueryc3d7.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/validationEngine/css/validationEngine.jqueryc3d7.css') }}" type="text/css"
+        rel="stylesheet">
     <link href="{{ asset('web/assets/css/style-junglebayresort90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/css/responsive-junglebayresort90f6.css?=v3') }}" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
 
- 
-
-    
-    
 
 
-   
-   
-   
-  
 
 
-    
+
+
+
+
+
+
+
+
+
 
     <script type="text/javascript" src={{ asset('web/assets/js/jquery90f6.js?=v3') }}></script>
-   
+
     <script type="text/javascript" src={{ asset('web/assets/plugins/loading/js/loading90f6.js?=v3') }}></script>
     <script type="text/javascript" src={{ asset('web/assets/plugins/bootstrap/js/bootstrap90f6.js?=v3') }}></script>
     <script type="text/javascript" src={{ asset('web/assets/plugins/maximage/js/jquery.maximage.min90f6.js?=v3') }}>
@@ -58,10 +64,8 @@
     </script>
     <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-autoplay.min90f6.js?=v3') }}>
     </script>
-    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-zoom.min90f6.js?=v3') }}>
-    </script>
-    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-hash.min90f6.js?=v3') }}>
-    </script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-zoom.min90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-hash.min90f6.js?=v3') }}></script>
     <script type="text/javascript" src={{ asset('web/assets/plugins/gallery_master/js/lg-pager.min90f6.js?=v3') }}>
     </script>
     <script type="text/javascript"
@@ -73,7 +77,7 @@
         src={{ asset('web/assets/plugins/validationEngine/js/jquery.validationEngine-en90f6.js?=v3') }}></script>
     <script type="text/javascript"
         src={{ asset('web/assets/plugins/validationEngine/js/jquery.validationEngine90f6.js?=v3') }}></script>
-        <script type="text/javascript" src={{ asset('web/assets/js/javascript-junglebayresort90f6.js?=v3') }}></script>
+    <script type="text/javascript" src={{ asset('web/assets/js/javascript-junglebayresort90f6.js?=v3') }}></script>
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -638,7 +642,7 @@
 
 
             <section class="section_menu1 fix scroll_menu">
-                <a class="navbar-brand navbar-brandmenu" href="index.php">
+                <a class="navbar-brand navbar-brandmenu" href="{{ route('welcome') }}">
                     <div class="brand_logo"></div>
                 </a>
 
@@ -662,20 +666,20 @@
 </a>
 
                 </li> -->
-                            <li class="menu_pc"><a class="underline " href="amenities.php">Amenities
-                                </a>
+                            <li class="menu_pc">
+                                <a class="underline " href={{ route('web-amenities') }}> Amenities </a>
 
                             </li>
 
-                            <li class="menu_pc"><a class="underline " href="wellness.php">Spa
-                                </a></li>
-                            <li class="menu_pc dropdown"><a class="underline " href="activity.php">Activities
-                                </a>
+                            <li class="menu_pc">
+                                <a class="underline " href={{ route('web-spa') }}>Spa </a>
+                            </li>
+                            <li class="menu_pc dropdown">
+                                <a class="underline " href={{ route('web-activities') }}> Activities </a>
 
                             </li>
-                            <li class="menu_pc dropdown"><a class="underline " href="wayanad.php">Wayanad
-                                </a>
-
+                            <li class="menu_pc dropdown">
+                                <a class="underline " href={{ route('web-wayanad') }}> Wayanad </a>
                             </li>
                             <li class="menu_pc"><a class="underline " href="gallery.php">Gallery</a></li>
 

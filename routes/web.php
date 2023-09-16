@@ -23,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+Route::get('jbay', [\App\Http\Controllers\Website\HomeController::class, 'index'])->name('welcome');
+Route::get('amenitis', [\App\Http\Controllers\Website\HomeController::class, 'amenities'])->name('web-amenities');
+Route::get('wellness', [\App\Http\Controllers\Website\HomeController::class, 'spa'])->name('web-spa');
+Route::get('activity', [\App\Http\Controllers\Website\HomeController::class, 'activities'])->name('web-activities');
+Route::get('wayanad', [\App\Http\Controllers\Website\HomeController::class, 'wayanad'])->name('web-wayanad');
+
 Route::get('admin-poolvilla', function () {
     return view('admin-poolvilla');
 });
@@ -30,6 +37,7 @@ Route::get('admin-poolvilla', function () {
 Route::get('admin-beetle', function () {
     return view('admin-beetle');
 })->name('beetle');
+
 Route::get('admin-jacuzzivilla', function () {
     return view('admin-jacuzzivilla');
 });
