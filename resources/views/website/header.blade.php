@@ -649,7 +649,7 @@
                 <nav class="navbar" role="navigation">
                     <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="menu_pc"><a class="underline" href="index.php">Home</a></li>
+                            <li class="menu_pc"><a class="underline" href="jbay">Home</a></li>
                             <li class="menu_pc dropdown"><a class="underline " href="">Stay</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="poolvilla.php">Duke’s Pool Villa</a></li>
