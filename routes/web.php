@@ -29,6 +29,7 @@ Route::get('amenitis', [\App\Http\Controllers\Website\HomeController::class, 'am
 Route::get('wellness', [\App\Http\Controllers\Website\HomeController::class, 'spa'])->name('web-spa');
 Route::get('activity', [\App\Http\Controllers\Website\HomeController::class, 'activities'])->name('web-activities');
 Route::get('wayanad', [\App\Http\Controllers\Website\HomeController::class, 'wayanad'])->name('web-wayanad');
+Route::get('room/{id}', [\App\Http\Controllers\Website\HomeController::class, 'room'])->name('web-room');
 
 Route::get('admin-poolvilla', function () {
     return view('admin-poolvilla');

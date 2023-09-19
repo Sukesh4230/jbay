@@ -649,23 +649,16 @@
                 <nav class="navbar" role="navigation">
                     <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="menu_pc"><a class="underline" href="jbay">Home</a></li>
+                            <li class="menu_pc">
+                                <a class="underline" href="{{ route('welcome') }}">Home</a>
+                            </li>
                             <li class="menu_pc dropdown"><a class="underline " href="">Stay</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="poolvilla.php">Duke’s Pool Villa</a></li>
-                                    <li><a href="beetle.php">Beetle – The Tree House</a></li>
-                                    <li><a href="jacuzzivillas.php">Regal Jacuzzi Villa</a></li>
-                                    <li><a href="bougainvilla.php">Bougain Villa</a></li>
-                                    <li><a href="pavilionroom.php">Pavilion Room</a></li>
-                                    <li><a href="penthouse.php">Pent House</a></li>
-
-
+                                    @foreach (\App\Models\Room::select('id', 'name')->get() ?? [] as $room)
+                                        <li><a href={{ route('web-room', $room->id) }}>{{ $room->name }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            <!--   <li class="menu_pc dropdown"><a class="underline " href="wine-dine.php">Wine & Dine
-</a>
-
-                </li> -->
                             <li class="menu_pc">
                                 <a class="underline " href={{ route('web-amenities') }}> Amenities </a>
 
