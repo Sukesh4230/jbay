@@ -72,6 +72,17 @@ Route::get('gal', function () {
     return view('website.gal');
 });
 
+
+Route::get('blogs-page', function () {
+    return view('website.blogs-page');
+});
+
+Route::get('blog', function () {
+    return view('website.blog');
+});
+
+
+
 Route::get('admin-gallery', function () {
     return view('admin-gallery');
 });
