@@ -68,6 +68,9 @@ Route::get('admin-activities', function () {
 Route::get('admin-wayanad', function () {
     return view('admin-wayanad');
 });
+Route::get('gal', function () {
+    return view('website.gal');
+});
 
 Route::get('admin-gallery', function () {
     return view('admin-gallery');
