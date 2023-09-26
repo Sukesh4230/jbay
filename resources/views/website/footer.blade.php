@@ -158,3 +158,8 @@
    </body>
 
    </html>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script type="text/javascript" src="../web/assets/js/jquery.cookiebb23.js?ver=1.9.5"></script>
+   <script type="text/javascript" src="../web/assets/js/mystickyelements-fronted.minbb23.js?ver=1.9.5"></script>

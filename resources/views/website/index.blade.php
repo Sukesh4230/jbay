@@ -1,4 +1,12 @@
 @extends('website.header')
+<style>
+    .owl-prev {
+    top: -250 !important;
+}
+.owl-next {
+    top: -250 !important;
+}
+</style>
 <div id="maximage">
     @foreach ($sliders ?? [] as $slider)
         <div class="mc-image">
@@ -60,7 +68,7 @@
 
 <section class="section_accommodation ">
     <div class="owl-carousel owl-theme slide_accommodation">
-        <a href="poolvilla.php">
+        <a href="/room/1">
             <div class="item">
                 <div class="imagebox_acoommodation imh" style="background: url({{ asset('storage/' . $DUKE) }}) right;">
                     <!-- <div class="name_accommodation">
@@ -94,7 +102,7 @@
                 </div>
             </div>
         </a>
-        <a href="beetle.php">
+        <a href="/room/2">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $BEETLE) }}) right;">
@@ -129,7 +137,7 @@
                 </div>
             </div>
         </a>
-        <a href="jacuzzivillas.php">
+        <a href="/room/3">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $REGAL) }}) right;">
@@ -165,7 +173,7 @@
                 </div>
             </div>
         </a>
-        <a href="bougainvilla.php">
+        <a href="/room/4">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $BOUGAIN) }}) right;">
@@ -201,7 +209,7 @@
             </div>
         </a>
 
-        <a href="pavilionroom.php">
+        <a href="/room/5">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $PAVILION) }}) right;">
@@ -238,7 +246,7 @@
         </a>
 
 
-        <a href="penthouse.php">
+        <a href="/room/6">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $PENT) }}) right;">
@@ -285,7 +293,7 @@
         <h2 class="sub">Amenities</h2>
         <div class="owl-carousel owl-theme slide_accommodation">
             @foreach ($amenities ?? [] as $amenity)
-                <a href="amenities.php">
+                <a href="/amenitis">
                     <div class="item">
                         <div class="imagebox_acoommodation imh"
                             style="background: url({{ asset('storage/' . $amenity->image_url) }}) right;">
@@ -306,7 +314,7 @@
         <h2 class="sub">Activities</h2>
         <div class="owl-carousel owl-theme slide_accommodation">
             @foreach ($activities ?? [] as $activity)
-                <a href="activity.php">
+                <a href="/activity">
                     <div class="item">
                         <div class="imagebox_acoommodation imh"
                             style="background: url({{ asset('storage/' . $activity->image_url) }}) right;">
@@ -328,7 +336,7 @@
         <h2 class="sub">Discover Wayanad</h2>
         <div class="owl-carousel owl-theme slide_accommodation">
             @foreach ($discovers ?? [] as $discover)
-                <a href="wayanad.php">
+                <a href="/wayanad">
                     <div class="item">
                         <div class="imagebox_acoommodation imh"
                             style="background: url({{ asset('storage/' . $discover->image_url) }}) right;">
