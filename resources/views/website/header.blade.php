@@ -7,12 +7,13 @@
     <title>Jungle Bay Resorts and Spa Wayanad</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('web/assets/css/animate90f6.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('web/assets/plugins/loading/css/loading90f6.css') }}" type="text/css" rel="stylesheet">
 
     <link href="{{ asset('web/assets/css/font-awesome.minbb23.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/css/mystickyelements-front.minbb23.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/css/all.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/css/animate90f6.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('web/assets/plugins/loading/css/loading90f6.css') }}" type="text/css" rel="stylesheet">
+
     <link href="{{ asset('web/assets/plugins/bootstrap/css/bootstrap90f6.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('web/assets/plugins/font_awesome/css/font-awesome.min90f6.css') }}" type="text/css"
         rel="stylesheet">
@@ -633,6 +634,7 @@
 <body>
 
     <section class="loading">
+    </section>
 
         <section class="section_slideshow">
 
@@ -695,34 +697,31 @@
                     <div class="overlay" id="overlay_popup">
                         <nav class="overlay-menu">
                             <ul class="menu">
-                                <li><a class="" href="index.php">Home</a></li>
+                                <li><a class="" href="{{ route('welcome') }}">Home</a></li>
                                 <li>
                                     <label for="drop-1" class="toggle ">Stay<span>+</span></label>
                                     <input type="checkbox" id="drop-1" />
                                     <ul class="submenu_mobile">
-                                        <li><a href="poolvilla.php">Duke’s Pool Villa</a></li>
-                                        <li><a href="beetle.php">Beetle – The Tree House</a></li>
-                                        <li><a href="jacuzzivillas.php">Regal Jacuzzi Villa</a></li>
-                                        <li><a href="bougainvilla.php">Bougain Villa</a></li>
-                                        <li><a href="pavilionroom.php">Pavilion Room</a></li>
-                                        <li><a href="penthouse.php">Pent House</a></li>
-                                    </ul>
+                                    @foreach (\App\Models\Room::select('id', 'name')->get() ?? [] as $room)
+                                        <li><a href={{ route('web-room', $room->id) }}>{{ $room->name }}</a></li>
+                                    @endforeach
+                                </ul>
                                 </li>
 
 
 
-                                <li><a class="" href="amenities.php">Amenities</a></li>
+                                <li><a class="" href={{ route('web-amenities') }}>Amenities</a></li>
 
-                                <li><a href="wellness.php">Spa</a></li>
+                                <li><a href={{ route('web-spa') }}>Spa</a></li>
 
                                 <li>
-                                    <a for="drop-3" href="activity.php">Activities</a>
+                                    <a for="drop-3" href={{ route('web-activities') }}>Activities</a>
 
 
                                 </li>
-                                <li><a class="" href="wayanad.php">Wayanad</a></li>
-                                <li><a class="" href="gallery.php">Gallery</a></li>
-                                <li><a class="" href="contact.php">Contact</a></li>
+                                <li><a class="" href={{ route('web-wayanad') }}>Wayanad</a></li>
+                                <li><a class="" href="gal">Gallery</a></li>
+                                <li><a class="" href="contact">Contact</a></li>
                             </ul>
 
                         </nav>
