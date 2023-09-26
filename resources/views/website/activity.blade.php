@@ -1,5 +1,13 @@
    @extends('website.header')
+   <style type="text/css">
+    #arrow_right {
+    display: none;
+}
 
+#arrow_left {
+    display: none;
+}
+   </style>
 
    <div id="maximage">
        @foreach ($sliders ?? [] as $slider)

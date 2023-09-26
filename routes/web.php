@@ -72,6 +72,10 @@ Route::get('gal', function () {
     return view('website.gal');
 });
 
+Route::get('contact', function () {
+    return view('website.contact');
+});
+
 
 Route::get('blogs-page', function () {
     return view('website.blogs-page');

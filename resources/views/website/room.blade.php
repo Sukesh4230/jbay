@@ -1,5 +1,15 @@
 @extends('website.header')
 
+<style type="text/css">
+    #arrow_right {
+    display: none;
+}
+
+#arrow_left {
+    display: none;
+}
+   </style>
+
 <div id="maximage">
     @foreach ($room->sliders ?? [] as $slider)
         <div class="mc-image">
@@ -126,7 +136,7 @@
 
 
 
-<section class="section_welcome">
+<section class="section_welcome mb-5">
 
     <div class="container">
         <h1>Room Amenities</h1>
@@ -186,21 +196,7 @@
                 </div>
             @endforeach
 
-            {{-- <div class="item">
-                <div class="imagebox_acoommodation" style="background: url('assets/images/jv/12.jpg') right;">
-                    <img id="myImg2" class="img-responsive" src="assets/images/jv/12.jpg" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="imagebox_acoommodation" style="background: url('assets/images/jv/13.jpg') right;">
-                    <img id="myImg3" class="img-responsive" src="assets/images/jv/13.jpg" alt="">
-                </div>
-            </div>
-            <div class="item">
-                <div class="imagebox_acoommodation" style="background: url('assets/images/jv/14.jpg') right;">
-                    <img id="myImg4" class="img-responsive" src="assets/images/jv/14.jpg" alt="">
-                </div>
-            </div> --}}
+           
 
         </div>
     </div>

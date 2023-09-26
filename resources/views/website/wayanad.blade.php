@@ -5,17 +5,13 @@
    <link rel="stylesheet" href={{ asset('web/fonts/LineIcons/Pro-Regular/font-css/LineIcons.css') }}>
 
    <style type="text/css">
-       .owl-prev {
-           position: absolute;
-           left: 50px;
-           top: 0px;
-       }
+    #arrow_right {
+    display: none;
+}
 
-       .owl-next {
-           position: absolute;
-           right: 50px;
-           top: 0px;
-       }
+#arrow_left {
+    display: none;
+}
    </style>
 
    <div id="maximage">

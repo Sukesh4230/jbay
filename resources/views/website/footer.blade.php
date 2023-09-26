@@ -1,4 +1,4 @@
-   <main class="ps-main">
+   <main class="ps-main" style="margin-top:50px;">
        <footer class="ps-footer ps-footer--default bg--cover" data-background={{ asset('web/img/bg/footer-bg.jpg') }}>
            <div class="container">
 
