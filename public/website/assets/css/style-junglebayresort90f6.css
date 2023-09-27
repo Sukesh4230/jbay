@@ -4613,3 +4613,8 @@ margin-top: 5px;
  .mobile-img{
   display: none;
     }
+
+    a:hover, a:focus {
+      color: #23527c;
+      text-decoration: none !important;
+  }
