@@ -347,7 +347,7 @@
                         </div>
                         <div class="details_accommodation text-center rps">
                             <h2 class="blc text-left"> {{ $discover->name }} </h2>
-                            <p class="text-left"> {{ $discover->description }} </p>
+                            <p class="text-left"> {{ $discover->home_description }} </p>
                         </div>
                     </div>
                 </a>
