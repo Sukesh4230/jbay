@@ -31,6 +31,7 @@ Route::get('activity', [\App\Http\Controllers\Website\HomeController::class, 'ac
 Route::get('wayanad', [\App\Http\Controllers\Website\HomeController::class, 'wayanad'])->name('web-wayanad');
 Route::get('room/{id}', [\App\Http\Controllers\Website\HomeController::class, 'room'])->name('web-room');
 Route::get('gallery',[\App\Http\Controllers\Website\HomeController::class, 'gallery'])->name('web-gallery');
+Route::get('gallery_images/{id}',[\App\Http\Controllers\Website\HomeController::class, 'galleryImages'])->name('gallery_images');
 
 Route::get('admin-poolvilla', function () {
     return view('admin-poolvilla');

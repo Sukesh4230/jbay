@@ -9,6 +9,7 @@ use App\Models\Amenity;
 use App\Models\AmenitySlider;
 use App\Models\Discover;
 use App\Models\DiscoverSlider;
+use App\Models\GalleryImage;
 use App\Models\Home;
 use App\Models\HomeSlider;
 use App\Models\Room;
@@ -78,5 +79,22 @@ class HomeController extends Controller
     {
         $room = Room::with('sliders', 'footers')->findorFail($id);
         return view('website.room', compact('room'));
+    }
+
+    public function gallery()
+    {
+        return view('website.gal');
+    }
+
+    public function galleryImages($id)
+    {
+        $galleryImages = GalleryImage::with('gallery')->where('gallery_id', $id)->get();
+        $data = [];
+        foreach ($galleryImages as $key => $value) {
+            $data['datasets'][$key]['src'] = asset('storage/' . $value->image_url);
+            $data['datasets'][$key]['thumb'] = asset('storage/' . $value->image_url);
+            $data['datasets'][$key]['subHtml'] = $value->name ?? $value->gallery->name ?? '';
+        }
+        return $data;
     }
 }

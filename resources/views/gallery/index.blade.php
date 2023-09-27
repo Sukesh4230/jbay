@@ -104,6 +104,10 @@
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Title </label>
+                                <input class="form-control" id="exampleFormControlInput" type="text" name="name" />
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="image_url" />
                             </div>
@@ -140,6 +144,10 @@
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="id" id="edit_id">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Title </label>
+                                <input class="form-control" id="edit_name" type="text" name="name" />
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="image_url" />
@@ -265,9 +273,9 @@
             var url = "{{ route('galleries.edit', ':id') }}";
             url = url.replace(':id', id);
             $.get(url, function(data) {
-                console.log(data);
                 $('#edit_gallery_id').val(data.gallery_id);
                 $('#edit_id').val(data.id);
+                $('#edit_name').val(data.name);
                 // $('#edit_description').val(data.description);
             })
         });

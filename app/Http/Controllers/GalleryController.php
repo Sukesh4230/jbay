@@ -59,6 +59,7 @@ class GalleryController extends Controller
     public function get_data($request)
     {
         $data['gallery_id'] = $request->gallery_id;
+        $data['name'] = $request->name;
         if ($request->file('image_url')) {
             $file = $request->file('image_url');
             $path = 'public/gallery/images/';
