@@ -24,18 +24,13 @@ class HomeController extends Controller
         $content = Home::select('description as content')->first();
         $sliders = HomeSlider::get();
 
-        $rooms = Room::with('defaultImage')->select('id', 'name')->get();
-        $DUKE = $rooms->where('id', '=', Room::DUKE)->first()->defaultImage->image_url ?? '';
-        $BEETLE = $rooms->where('id', '=', Room::BEETLE)->first()->defaultImage->image_url ?? '';
-        $REGAL = $rooms->where('id', '=', Room::REGAL)->first()->defaultImage->image_url ?? '';
-        $BOUGAIN = $rooms->where('id', '=', Room::BOUGAIN)->first()->defaultImage->image_url ?? '';
-        $PAVILION = $rooms->where('id', '=', Room::PAVILION)->first()->defaultImage->image_url ?? '';
-        $PENT = $rooms->where('id', '=', Room::PENT)->first()->defaultImage->image_url ?? '';
+        $rooms = Room::with('defaultImage')->get();
+
 
         $amenities = Amenity::latest()->get();
         $activities = Activity::latest()->get();
         $discovers = Discover::latest()->get();
-        return view('website.index', compact('content', 'sliders', 'DUKE', 'BEETLE', 'REGAL', 'BOUGAIN', 'PAVILION', 'PENT', 'amenities', 'activities', 'discovers'));
+        return view('website.index', compact('content', 'sliders', 'rooms', 'amenities', 'activities', 'discovers'));
     }
 
     public function amenities()

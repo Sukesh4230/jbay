@@ -165,6 +165,10 @@
                                 <label class="form-label" for="exampleFormControlInput">Content </label>
                                 <textarea class="form-control" rows="3" name="description" data-tinymce="{}"></textarea>
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Home Content </label>
+                                <textarea class="form-control" rows="3" name="home_description" data-tinymce="{}"></textarea>
+                            </div>
 
                         </div>
                         <div class="modal-footer">
@@ -206,6 +210,10 @@
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput">Content </label>
                                 <textarea class="form-control" rows="3" name="description" data-tinymce="{}" id="edit_description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput">Home Content </label>
+                                <textarea class="form-control" rows="3" name="home_description" data-tinymce="{}" id="edit_home_description"></textarea>
                             </div>
 
                         </div>
@@ -362,6 +370,8 @@
                 $('#edit_id').val(data.id);
                 $('#edit_name').val(data.name);
                 $('#edit_description').val(data.description);
+                $('#edit_home_description').val(data.home_description);
+                // home_description
             })
         });
 

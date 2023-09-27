@@ -77,6 +77,7 @@ class RoomController extends Controller
         $room = Room::findOrFail($id);
         $data = [
             'description' => $request->description,
+            'home_description' => $request->home_description,
             'price' => $request->price,
             'extra_adult_price' => $request->extra_adult_price,
         ];

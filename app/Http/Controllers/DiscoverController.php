@@ -58,6 +58,7 @@ class DiscoverController extends Controller
         $data = [
             'name' => $request->name,
             'description' => $request->description,
+            'home_description' => $request->home_description,
         ];
         if ($request->file('image_url')) {
             $file = $request->file('image_url');

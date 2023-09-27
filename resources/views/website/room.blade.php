@@ -2,13 +2,13 @@
 
 <style type="text/css">
     #arrow_right {
-    display: none;
-}
+        display: none;
+    }
 
-#arrow_left {
-    display: none;
-}
-   </style>
+    #arrow_left {
+        display: none;
+    }
+</style>
 
 <div id="maximage">
     @foreach ($room->sliders ?? [] as $slider)
@@ -190,13 +190,15 @@
         <div class="owl-carousel owl-theme slide_photo1">
             @foreach ($room->footers as $footer)
                 <div class="item">
-                    <div class="imagebox_acoommodation" style="background: url({{ asset('storage/' . $footer->image_url) }}) right;">
-                        <img id="myImg1" class="img-responsive" src="{{ asset('storage/' . $footer->image_url) }}" alt="">
+                    <div class="imagebox_acoommodation"
+                        style="background: url({{ asset('storage/' . $footer->image_url) }}) right;">
+                        <img id="myImg1" class="img-responsive" src="{{ asset('storage/' . $footer->image_url) }}"
+                            alt="">
                     </div>
                 </div>
             @endforeach
 
-           
+
 
         </div>
     </div>

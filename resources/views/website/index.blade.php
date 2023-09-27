@@ -1,11 +1,12 @@
 @extends('website.header')
 <style>
     .owl-prev {
-    top: -250 !important;
-}
-.owl-next {
-    top: -250 !important;
-}
+        top: -250 !important;
+    }
+
+    .owl-next {
+        top: -250 !important;
+    }
 </style>
 <div id="maximage">
     @foreach ($sliders ?? [] as $slider)
@@ -68,41 +69,40 @@
 
 <section class="section_accommodation ">
     <div class="owl-carousel owl-theme slide_accommodation">
-        <a href="/room/1">
-            <div class="item">
-                <div class="imagebox_acoommodation imh" style="background: url({{ asset('storage/' . $DUKE) }}) right;">
-                    <!-- <div class="name_accommodation">
+        @foreach ($rooms ?? [] as $room)
+            <a href="/room/{{ $room->id }}">
+                <div class="item">
+                    <div class="imagebox_acoommodation imh"
+                        style="background: url({{ asset('storage/' . ($room->defaultImage->image_url ?? '')) }}) right;">
+                        <!-- <div class="name_accommodation">
 
                     </div> -->
-                </div>
-                <div class="details_accommodation text-left">
+                    </div>
+                    <div class="details_accommodation text-left">
 
 
-                    <ul>
-                        <li>
-                            <img src={{ asset('website/assets/images/icon/facilitiesinroom/air-conditioner.png') }}>
-                        </li>
-                        <li>
-                            <img src={{ asset('website/assets/images/icon/facilitiesinroom/tv.png') }}>
-                        </li>
-                        <li>
-                            <img src={{ asset('website/assets/images/icon/facilitiesinroom/hair-dryer.png') }}>
-                        </li>
-                        <li>
-                            <img src={{ asset('website/assets/images/icon/facilitiesinroom/safe-box.png') }}>
-                        </li>
-                    </ul>
-                    <h2 class="blc bold text-left">Duke’s Pool Villa</h2>
-                    <p class="text-left">
-                        The Duke’s pool villa at Jungle Bay is one of the most luxurious pool villas in Wayanad. The
-                        aesthetically designed spacious pool with a small waterfall on one side will refresh your body
-                        and
-                        mind.
-                    </p>
+                        <ul>
+                            <li>
+                                <img src={{ asset('website/assets/images/icon/facilitiesinroom/air-conditioner.png') }}>
+                            </li>
+                            <li>
+                                <img src={{ asset('website/assets/images/icon/facilitiesinroom/tv.png') }}>
+                            </li>
+                            <li>
+                                <img src={{ asset('website/assets/images/icon/facilitiesinroom/hair-dryer.png') }}>
+                            </li>
+                            <li>
+                                <img src={{ asset('website/assets/images/icon/facilitiesinroom/safe-box.png') }}>
+                            </li>
+                        </ul>
+                        <h2 class="blc bold text-left">{{ $room->name }}</h2>
+                        <p class="text-left"> {{ $room->home_description }} </p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="/room/2">
+            </a>
+        @endforeach
+
+        {{-- <a href="/room/2">
             <div class="item">
                 <div class="imagebox_acoommodation imh"
                     style="background: url({{ asset('storage/' . $BEETLE) }}) right;">
@@ -279,7 +279,7 @@
                     </p>
                 </div>
             </div>
-        </a>
+        </a> --}}
 
 
 
@@ -300,7 +300,7 @@
                         </div>
                         <div class="details_accommodation text-center rps">
                             <h2 class="blc text-left"> {{ $amenity->name }} </h2>
-                            <p class="text-left"> {{ $amenity->description }} </p>
+                            <p class="text-left"> {{ $amenity->home_description }} </p>
                         </div>
                     </div>
                 </a>
@@ -321,7 +321,7 @@
                         </div>
                         <div class="details_accommodation text-center rps">
                             <h2 class="blc text-left"> {{ $activity->name }} </h2>
-                            <p class="text-left"> {{ $activity->description }} </p>
+                            <p class="text-left"> {{ $activity->home_description }} </p>
                         </div>
                     </div>
                 </a>

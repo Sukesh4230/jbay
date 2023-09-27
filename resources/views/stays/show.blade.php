@@ -164,6 +164,10 @@
                                 <textarea class="form-control" id="exampleTextarea" rows="5" name="description"> {{ $room->description }} </textarea>
                             </div>
                             <div class="mb-3">
+                                <label class="form-label" for="exampleTextarea">Home Content </label>
+                                <textarea class="form-control" id="exampleTextarea" rows="5" name="home_description"> {{ $room->home_description }} </textarea>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput">Price </label>
                                 <input class="form-control" id="exampleFormControlInput" type="number" name="price"
                                     value="{{ $room->price }}" />
@@ -304,7 +308,7 @@
             })
 
         });
-        
+
         $(document).on('click', '.deleteFooter', function() {
             var id = $(this).data("id");
             swal.fire({
