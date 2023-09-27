@@ -371,7 +371,6 @@
                 $('#edit_name').val(data.name);
                 $('#edit_description').val(data.description);
                 $('#edit_home_description').val(data.home_description);
-                // home_description
             })
         });
 

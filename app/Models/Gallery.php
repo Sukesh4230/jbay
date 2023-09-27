@@ -11,4 +11,10 @@ class Gallery extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'galleries';
     protected $guarded = [];
+    const Spa = 1;
+    const Restaurant = 2;
+    const Stay = 3;
+    const Activity = 4;
+    const Resort = 5;
+    const Amenities = 6;
 }
