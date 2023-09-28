@@ -676,7 +676,7 @@
                             <li class="menu_pc dropdown">
                                 <a class="underline " href={{ route('web-wayanad') }}> Wayanad </a>
                             </li>
-                            <li class="menu_pc"><a class="underline " href="gal">Gallery</a></li>
+                            <li class="menu_pc"><a class="underline " href={{ route('web-gallery') }}>Gallery</a></li>
 
                             <li class="menu_pc"><a class="underline " href="contact">Contact</a></li>
                         </ul>
