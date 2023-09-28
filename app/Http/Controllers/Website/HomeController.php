@@ -7,6 +7,7 @@ use App\Models\Activity;
 use App\Models\ActivitySlider;
 use App\Models\Amenity;
 use App\Models\AmenitySlider;
+use App\Models\Blog;
 use App\Models\Discover;
 use App\Models\DiscoverSlider;
 use App\Models\GalleryImage;
@@ -17,6 +18,7 @@ use App\Models\SpaFooter;
 use App\Models\SpaService;
 use App\Models\SpaSlider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -96,5 +98,17 @@ class HomeController extends Controller
             $data['datasets'][$key]['subHtml'] = $value->name ?? $value->gallery->name ?? '';
         }
         return $data;
+    }
+
+    public function blog()
+    {
+        $blogs = Blog::orderBy('date', 'desc')->paginate(6);
+        return view('website.blogs-page', compact('blogs'));
+    }
+
+    public function blogShow($id)
+    {
+        $blog = Blog::findorFail($id);
+        return view('website.blog', compact('blog'));
     }
 }

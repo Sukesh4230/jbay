@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::get();
+        $blogs = Blog::orderBy('date', 'DESC')->get();
         return view('blog.index', compact('blogs'));
     }
 
@@ -37,6 +37,11 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'image_url' => 'nullable|image',
+            'date' => 'date',
+        ]);
         $data = $this->get_data($request);
         if ($request->id) {
             $blog = Blog::findorFail($request->id);
@@ -53,6 +58,7 @@ class BlogController extends Controller
             'name' => $request->name,
             'date' => $request->date,
             'description' => $request->description,
+            'short_description' => $request->short_description,
         ];
         if ($request->file('image_url')) {
             $file = $request->file('image_url');

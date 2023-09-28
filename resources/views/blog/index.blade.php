@@ -17,15 +17,18 @@
                                 <thead>
                                     <tr>
 
+                                        <th class="p-2" scope="col">Date</th>
                                         <th class="p-2" scope="col">Image</th>
                                         <th class="p-2" scope="col">Title</th>
+                                        <th class="p-2" scope="col">Home Description</th>
+                                        <th class="p-2" scope="col">Description</th>
                                         <th class="p-2" scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($blogs as $blog)
                                         <tr id="detail-row-{{ $blog->id }}">
-
+                                            <td class="p-2">{{ $blog->date }}</td>
                                             <td class="p-2">
                                                 @if ($blog->image_url)
                                                     <div class="avatar avatar-4xl ">
@@ -37,6 +40,8 @@
 
                                             </td>
                                             <td class="p-2">{{ $blog->name }}</td>
+                                            <td class="p-2">{{ $blog->short_description }}</td>
+                                            <td class="p-2">{{ $blog->description }}</td>
                                             <td class="p-2">
                                                 <button class="btn btn-phoenix-danger me-1 mb-1 deleteDetails"
                                                     data-id="{{ $blog->id }}" type="button"> Delete
@@ -108,21 +113,28 @@
 
 
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="organizerSingle">Home Content</label>
+                                <textarea class="form-control" rows="3" name="short_description" data-tinymce="{}"></textarea>
+
+
+                            </div>
 
 
 
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Submit</button>
-                            <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-outline-primary" type="button"
+                                data-bs-dismiss="modal">Cancel</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="verticallyCentered-2" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel-1"
-            style="display: none;" aria-hidden="true">
+        <div class="modal fade" id="verticallyCentered-2" tabindex="-1"
+            aria-labelledby="verticallyCenteredModalLabel-1" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -130,11 +142,11 @@
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('blogs.store') }} method="post" name="main_form_create"
+                    <form action={{ route('blogs.store') }} method="post" name="main_form_edit"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
-                            <input type="text" name="id" id="edit_id">
+                            <input type="hidden" name="id" id="edit_id">
 
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput">Title </label>
@@ -150,19 +162,20 @@
 
                             <div class="mb-3">
                                 <label class="form-label" for="organizerSingle">Date</label>
-                                <input class="form-control datetimepicker" id="datepicker" type="text" name="date"
-                                    id="edit_date" placeholder="dd/mm/yyyy"
-                                    data-options='{"disableMobile":true,"dateFormat":"Y-m-d"}' />
+                                <input class="form-control datetimepicker" type="date" name="date" id="edit_date"
+                                    placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"dateFormat":"Y-m-d"}' />
 
 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="organizerSingle">Content</label>
                                 <textarea class="form-control" rows="3" name="description" data-tinymce="{}" id="edit_description"></textarea>
-
-
                             </div>
-
+                            <div class="mb-3">
+                                <label class="form-label" for="organizerSingle">Home Content</label>
+                                <textarea class="form-control" rows="3" name="short_description" data-tinymce="{}"
+                                    id="edit_short_description"></textarea>
+                            </div>
 
 
                         </div>
@@ -229,6 +242,7 @@
                 $('#edit_name').val(data.name);
                 $('#edit_date').val(data.date);
                 $('#edit_description').val(data.description);
+                $('#edit_short_description').val(data.short_description);
             })
         });
         $(document).on('click', '.deleteDetails', function() {

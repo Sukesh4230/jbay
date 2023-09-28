@@ -32,6 +32,8 @@ Route::get('wayanad', [\App\Http\Controllers\Website\HomeController::class, 'way
 Route::get('room/{id}', [\App\Http\Controllers\Website\HomeController::class, 'room'])->name('web-room');
 Route::get('gallery',[\App\Http\Controllers\Website\HomeController::class, 'gallery'])->name('web-gallery');
 Route::get('gallery_images/{id}',[\App\Http\Controllers\Website\HomeController::class, 'galleryImages'])->name('gallery_images');
+Route::get('blog',[\App\Http\Controllers\Website\HomeController::class, 'blog'])->name('web-blog');
+Route::get('blog/{id}',[\App\Http\Controllers\Website\HomeController::class, 'blogShow'])->name('web-blog-show');
 
 Route::get('admin-poolvilla', function () {
     return view('admin-poolvilla');
@@ -83,9 +85,9 @@ Route::get('blogs-page', function () {
     return view('website.blogs-page');
 });
 
-Route::get('blog', function () {
-    return view('website.blog');
-});
+// Route::get('blog', function () {
+//     return view('website.blog');
+// });
 
 
 
