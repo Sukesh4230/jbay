@@ -7,16 +7,19 @@
     .owl-next {
         top: -250 !important;
     }
-    a:hover, a:focus {
-      color: #23527c;
-      text-decoration: none !important;
-  }
+
+    a:hover,
+    a:focus {
+        color: #23527c;
+        text-decoration: none !important;
+    }
 </style>
 <div id="maximage">
     @foreach ($sliders ?? [] as $slider)
         <div class="mc-image">
             <div class="overlay_slide">
-                <img src="{{ asset('storage/' . $slider->image_url) }}">
+                <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
+                <img class="mobile-img" src={{ asset('storage/' . $slider->mobile_image_url) }}>
 
                 <div class="text_slide">
                     <ul>

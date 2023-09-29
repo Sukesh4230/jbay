@@ -14,7 +14,8 @@
     @foreach ($room->sliders ?? [] as $slider)
         <div class="mc-image">
             <div class="overlay_slide">
-                <img src="{{ asset('storage/' . $slider->image_url) }}">
+                <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
+                <img class="mobile-img" src={{ asset('storage/' . $slider->mobile_image_url) }}>
                 <div class="text_slide text_slide2">
                     <ul>
                         <li>
