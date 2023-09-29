@@ -89,12 +89,7 @@
                                             <td class="p-2">{{ $contact->phone }}</td>
                                             <td class="p-2">{{ $contact->description }}</td>
                                             <td class="p-2">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input update-contact" type="checkbox"
-                                                        id="flexSwitchCheckDefault" checked data-id={{ $contact->id }} />
-                                                    <label class="form-check-label" for="flexSwitchCheckDefault">Update
-                                                        Enquery</label>
-                                                </div>
+                                                Updated
                                             </td>
                                         </tr>
                                     @endforeach
