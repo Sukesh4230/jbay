@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -34,6 +35,8 @@ Route::get('gallery',[\App\Http\Controllers\Website\HomeController::class, 'gall
 Route::get('gallery_images/{id}',[\App\Http\Controllers\Website\HomeController::class, 'galleryImages'])->name('gallery_images');
 Route::get('blog',[\App\Http\Controllers\Website\HomeController::class, 'blog'])->name('web-blog');
 Route::get('blog/{id}',[\App\Http\Controllers\Website\HomeController::class, 'blogShow'])->name('web-blog-show');
+Route::get('contact',[\App\Http\Controllers\Website\HomeController::class, 'contact'])->name('web-contact');
+Route::post('/contact',[\App\Http\Controllers\Website\HomeController::class, 'saveContact'])->name('web-save-contact');
 
 Route::get('admin-poolvilla', function () {
     return view('admin-poolvilla');
@@ -76,9 +79,7 @@ Route::get('gal', function () {
     return view('website.gal');
 });
 
-Route::get('contact', function () {
-    return view('website.contact');
-});
+
 
 
 Route::get('blogs-page', function () {
@@ -147,5 +148,10 @@ Route::group(
         Route::resource('galleries', GalleryController::class);
         Route::resource('blogs', BlogController::class);
 
+        Route::resource('contacts', ContactController::class);
+        Route::post('contact-slider-upload', [ContactController::class, 'sliderImageUpload'])->name('contact_slider_upload');
+        Route::get('delete-contact-slider-image/{id}', [ContactController::class, 'deleteSlider'])->name('delete-contact-slider-image');
+
+        Route::post('/update-contact',[ContactController::class, 'updateContact'])->name('update-contact');
     }
 );

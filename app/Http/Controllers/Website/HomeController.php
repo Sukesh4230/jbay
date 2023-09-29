@@ -8,6 +8,8 @@ use App\Models\ActivitySlider;
 use App\Models\Amenity;
 use App\Models\AmenitySlider;
 use App\Models\Blog;
+use App\Models\Contact;
+use App\Models\ContactSlider;
 use App\Models\Discover;
 use App\Models\DiscoverSlider;
 use App\Models\GalleryImage;
@@ -111,4 +113,29 @@ class HomeController extends Controller
         $blog = Blog::findorFail($id);
         return view('website.blog', compact('blog'));
     }
+
+    public function contact()
+    {
+        // $blogs = Blog::orderBy('date', 'desc')->paginate(6);
+        $sliders = ContactSlider::latest()->get();
+        return view('website.contact', compact('sliders'));
+    }
+
+    public function saveContact(Request $request)
+    {
+        // return $request->all();
+        request()->validate([
+            'phone' => 'numeric|required',
+            'email' => 'email'
+        ]);
+        $data = [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'description' => $request->comment
+        ];
+        Contact::create($data);
+        return redirect()->route('web-contact');
+    }
+
 }
