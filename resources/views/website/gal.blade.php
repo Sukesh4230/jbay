@@ -28,130 +28,154 @@
 
 
        <div class="demo-gallery">
-           <div class="col-xs-6" data-src="web/assets/images/pv/1.jpg">
-               <div id="accommodation">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/pv/1.jpg" alt=""
-                           style="display: none;">
-                       <div class="image_photo item_img" style="background: url('web/assets/images/pv/1.jpg') center;">
-                       </div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
+           @if ($stayImage)
+               <div class="col-xs-6" data-src="{{ asset('storage/' . $stayImage) }}">
+                   <div id="accommodation">
+                       <div class="view overlay_gallery hm-red-strong">
+                           <img class="img-responsive" src="{{ asset('storage/' . $stayImage) }}" alt=""
+                               style="display: none;">
+                           <div class="image_photo item_img"
+                               style="background: url('{{ asset('storage/' . $stayImage) }}') center;">
+                           </div>
+                           <div class="mask flex-center">
+                               <div class="text_gallery_hover">
+                                   <i class="fa fa-search-plus" aria-hidden="true"></i>
+                               </div>
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="group_gallery">
-                   <p>
-                       Stay
-                   </p>
-               </div>
+                   <div class="group_gallery">
+                       <p>
+                           Stay
+                       </p>
+                   </div>
 
-           </div>
-           <div class="col-xs-3" data-src="web/assets/images/dining/35.jpeg">
-               <div id="restaurant">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/dining/35.jpeg" alt=""
-                           style="display: none;">
-                       <div class="image_photo item_img"
-                           style="background: url('web/assets/images/dining/35.jpeg') center;"></div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
+               </div>
+           @endif
+
+           @if ($restaurantImage)
+               <div class="col-xs-3" data-src="{{ asset('storage/' . $restaurantImage) }}">
+                   <div id="restaurant">
+                       <div class="view overlay_gallery hm-red-strong">
+                           <img class="img-responsive" src="{{ asset('storage/' . $restaurantImage) }}" alt=""
+                               style="display: none;">
+                           <div class="image_photo item_img"
+                               style="background: url('{{ asset('storage/' . $restaurantImage) }}') center;"></div>
+                           <div class="mask flex-center">
+                               <div class="text_gallery_hover">
+                                   <i class="fa fa-search-plus" aria-hidden="true"></i>
+                               </div>
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="group_gallery">
-                   <p>
-                       Restaurant
-                   </p>
-               </div>
+                   <div class="group_gallery">
+                       <p>
+                           Restaurant
+                       </p>
+                   </div>
 
-           </div>
-           <div class="col-xs-3" data-src="web/assets/images/facilities/spa/2.jpg">
-               <div id="spa">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/facilities/spa/2.jpg" alt=""
-                           style="display: none;">
-                       <div class="image_photo item_img"
-                           style="background: url('web/assets/images/facilities/spa/2.jpg') center;"></div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
+               </div>
+           @endif
+
+           @if ($spaImage)
+               <div class="col-xs-3" data-src="{{ asset('storage/' . $spaImage) }}">
+                   <div id="spa">
+                       <div class="view overlay_gallery hm-red-strong">
+                           <img class="img-responsive" src="{{ asset('storage/' . $spaImage) }}" alt=""
+                               style="display: none;">
+                           <div class="image_photo item_img"
+                               style="background: url('{{ asset('storage/' . $spaImage) }}') center;"></div>
+                           <div class="mask flex-center">
+                               <div class="text_gallery_hover">
+                                   <i class="fa fa-search-plus" aria-hidden="true"></i>
+                               </div>
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="group_gallery">
-                   <p>
-                       Spa
-                   </p>
-               </div>
+                   <div class="group_gallery">
+                       <p>
+                           Spa
+                       </p>
+                   </div>
 
-           </div>
-           <div class="col-xs-3" data-src="web/assets/images/an/1.jpg">
-               <div id="meetingroom">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/an/1.jpg" alt=""
-                           style="display: none;">
-                       <div class="image_photo item_img" style="background: url('web/assets/images/an/1.jpg') center;">
-                       </div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
+               </div>
+           @endif
+
+
+           @if ($amenitiesImage)
+               <div class="col-xs-3" data-src="{{ asset('storage/' . $amenitiesImage) }}">
+                   <div id="meetingroom">
+                       <div class="view overlay_gallery hm-red-strong">
+                           <img class="img-responsive" src="{{ asset('storage/' . $amenitiesImage) }}" alt=""
+                               style="display: none;">
+                           <div class="image_photo item_img"
+                               style="background: url('{{ asset('storage/' . $amenitiesImage) }}') center;">
+                           </div>
+                           <div class="mask flex-center">
+                               <div class="text_gallery_hover">
+                                   <i class="fa fa-search-plus" aria-hidden="true"></i>
+                               </div>
                            </div>
                        </div>
                    </div>
+                   <div class="group_gallery">
+                       <p>
+                           Amenities
+                       </p>
+                   </div>
                </div>
-               <div class="group_gallery">
-                   <p>
-                       Amenities
-                   </p>
-               </div>
+           @endif
 
-           </div>
-           <div class="col-xs-6" data-src="web/assets/images/r1.jpg">
-               <div id="other">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/r1.jpg" alt="" style="display: none;">
-                       <div class="image_photo item_img" style="background: url('web/assets/images/r1.jpg') center;">
-                       </div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
+           @if ($resortImage)
+               <div class="col-xs-6" data-src="{{ asset('storage/' . $resortImage) }}">
+                   <div id="other">
+                       <div class="view overlay_gallery hm-red-strong">
+                           <img class="img-responsive" src="{{ asset('storage/' . $resortImage) }}" alt=""
+                               style="display: none;">
+                           <div class="image_photo item_img"
+                               style="background: url('{{ asset('storage/' . $resortImage) }}') center;">
+                           </div>
+                           <div class="mask flex-center">
+                               <div class="text_gallery_hover">
+                                   <i class="fa fa-search-plus" aria-hidden="true"></i>
+                               </div>
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="group_gallery">
-                   <p>
-                       Resort
-                   </p>
-               </div>
-
-           </div>
-           <div class="col-xs-3" data-src="web/assets/images/7.jpg">
-               <div id="activity">
-                   <div class="view overlay_gallery hm-red-strong">
-                       <img class="img-responsive" src="web/assets/images/7.jpg" alt="" style="display: none;">
-                       <div class="image_photo item_img" style="background: url('web/assets/images/7.jpg') center;">
-                       </div>
-                       <div class="mask flex-center">
-                           <div class="text_gallery_hover">
-                               <i class="fa fa-search-plus" aria-hidden="true"></i>
-                           </div>
-                       </div>
+                   <div class="group_gallery">
+                       <p>
+                           Resort
+                       </p>
                    </div>
-               </div>
-               <div class="group_gallery">
-                   <p>
-                       Activity
-                   </p>
-               </div>
 
-           </div>
+               </div>
+           @endif
+
+
+
+           @if ($activityImage)
+           <div class="col-xs-3" data-src="{{ asset('storage/' . $activityImage) }}">
+            <div id="activity">
+                <div class="view overlay_gallery hm-red-strong">
+                    <img class="img-responsive" src="{{ asset('storage/' . $activityImage) }}" alt="" style="display: none;">
+                    <div class="image_photo item_img" style="background: url('{{ asset('storage/' . $activityImage) }}') center;">
+                    </div>
+                    <div class="mask flex-center">
+                        <div class="text_gallery_hover">
+                            <i class="fa fa-search-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group_gallery">
+                <p>
+                    Activity
+                </p>
+            </div>
+
+        </div>
+           @endif
+
 
        </div>
 
@@ -235,7 +259,7 @@
        });
        $('#other').on('click', function() {
            var url = "{{ route('gallery_images', ':id') }}";
-           url = url.replace(':id', 6);
+           url = url.replace(':id', 5);
            $.get(url, function(data) {
                $(this).lightGallery({
                    dynamic: true,

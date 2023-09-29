@@ -23,7 +23,7 @@ class GallerySeeder extends Seeder
             'Stay',
             'Activity',
             'Resort',
-            'Amenities'
+            'Amenities',
         ];
         foreach ($names as $name) {
             Gallery::create(['name' => $name]);

@@ -17,4 +17,9 @@ class Gallery extends Model
     const Activity = 4;
     const Resort = 5;
     const Amenities = 6;
+
+    public function image()
+    {
+        return $this->hasOne(GalleryImage::class, 'gallery_id', 'id');
+    }
 }

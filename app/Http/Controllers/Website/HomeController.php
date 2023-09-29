@@ -12,6 +12,7 @@ use App\Models\Contact;
 use App\Models\ContactSlider;
 use App\Models\Discover;
 use App\Models\DiscoverSlider;
+use App\Models\Gallery;
 use App\Models\GalleryImage;
 use App\Models\Home;
 use App\Models\HomeSlider;
@@ -87,7 +88,14 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        return view('website.gal');
+        $galleries = Gallery::has('image')->with('image:gallery_id,image_url')->select('id')->get();
+        $stayImage = $galleries->where('id', Gallery::Stay)->first()->image->image_url ?? '';
+        $restaurantImage = $galleries->where('id', Gallery::Restaurant)->first()->image->image_url ?? '';
+        $spaImage = $galleries->where('id', Gallery::Spa)->first()->image->image_url ?? '';
+        $amenitiesImage = $galleries->where('id', Gallery::Amenities)->first()->image->image_url ?? '';
+        $activityImage = $galleries->where('id', Gallery::Activity)->first()->image->image_url ?? '';
+        $resortImage = $galleries->where('id', Gallery::Resort)->first()->image->image_url ?? '';
+        return view('website.gal', compact('stayImage', 'resortImage', 'spaImage', 'restaurantImage', 'amenitiesImage', 'activityImage'));
     }
 
     public function galleryImages($id)
