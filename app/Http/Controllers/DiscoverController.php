@@ -119,14 +119,21 @@ class DiscoverController extends Controller
     {
         $validated = $request->validate([
             'image_url' => 'required|image',
+            'mobile_image_url' => 'required|image',
         ]);
 
         if ($request->file('image_url')) {
             $file = $request->file('image_url');
             $path = 'public/discover_sliders/images/';
             $data['image_url'] = 'discover_sliders/images/' . FileUpload::storeFile($file, $path);
-            DiscoverSlider::create($data);
         }
+        if ($request->file('mobile_image_url')) {
+            $file = $request->file('mobile_image_url');
+            $path = 'public/discover_sliders/images/';
+            $data['mobile_image_url'] = 'discover_sliders/images/' . FileUpload::storeFile($file, $path);
+        }
+        DiscoverSlider::create($data);
+
         return redirect()->route('discovers.index');
     }
     public function deleteSlider(Request $request)

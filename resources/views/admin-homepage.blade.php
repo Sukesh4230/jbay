@@ -16,6 +16,7 @@
                                     <tr>
 
                                         <th class="p-2" scope="col">Image</th>
+                                        <th class="p-2" scope="col">Image(Mobile) </th>
                                         <th class="p-2" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -26,6 +27,12 @@
                                                 <div class="avatar avatar-4xl ">
                                                     <img class="rounded-none " alt=""
                                                         src="{{ asset('storage/' . $slider->image_url) }}" />
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="avatar avatar-4xl ">
+                                                    <img class="rounded-none " alt=""
+                                                        src="{{ asset('storage/' . $slider->mobile_image_url) }}" />
                                                 </div>
                                             </td>
                                             <td class="p-2">
@@ -65,16 +72,18 @@
 
 
                             <button class="btn btn-primary" id="liveToastBtn" type="button">Show live toast</button>
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
-  <div class="toast fade" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <strong class="me-auto">Bootstrap</strong>
-      <small class="text-800">11 mins ago</small>
-      <button class="btn ms-2 p-0" type="button" data-bs-dismiss="toast" aria-label="Close"><span class="uil uil-times fs-1"></span></button>
-    </div>
-    <div class="toast-body">Hello, world! This is a toast message.</div>
-  </div>
-</div>
+                            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+                                <div class="toast fade" id="liveToast" role="alert" aria-live="assertive"
+                                    aria-atomic="true">
+                                    <div class="toast-header">
+                                        <strong class="me-auto">Bootstrap</strong>
+                                        <small class="text-800">11 mins ago</small>
+                                        <button class="btn ms-2 p-0" type="button" data-bs-dismiss="toast"
+                                            aria-label="Close"><span class="uil uil-times fs-1"></span></button>
+                                    </div>
+                                    <div class="toast-body">Hello, world! This is a toast message.</div>
+                                </div>
+                            </div>
 
 
 
@@ -107,6 +116,12 @@
                                 <small class="float-end text-danger mt-2">image dimension:
                                     1600(width) x 1069(height)</small>
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label">Upload Image (Mobile) </label>
+                                <input class="form-control" type="file" name="mobile_image_url" />
+                                <small class="float-end text-danger mt-2">image dimension:
+                                    1600(width) x 1069(height)</small>
+                            </div>
 
                         </div>
                         <div class="modal-footer">
@@ -134,8 +149,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="verticallyCenteredModalLabel">Edit Content</h5><button class="btn p-1"
-                            type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <h5 class="modal-title" id="verticallyCenteredModalLabel">Edit Content</h5><button
+                            class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
                     <form action={{ route('edit-home') }} method="post" name="edit-home">
@@ -246,10 +261,15 @@
                         required: true,
                         extension: "jpg|jpeg|png",
                     },
+                    mobile_image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
 
                 },
                 messages: {
-                    slider_image: 'Slider image is required'
+                    slider_image: 'Slider image is required',
+                    mobile_image_url: 'Slider image (mobile) is required'
                 },
                 ignore: "",
             });

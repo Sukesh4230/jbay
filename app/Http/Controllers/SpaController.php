@@ -47,9 +47,13 @@ class SpaController extends Controller
             'image_url' => 'required|image'
         ]);
         if ($request->type == 'slider') {
+            request()->validate(['mobile_image_url' => 'required|image']);
             $file = $request->file('image_url');
             $path = 'public/spa_sliders/images/';
             $data['image_url'] = 'spa_sliders/images/' . FileUpload::storeFile($file, $path);
+            $file = $request->file('mobile_image_url');
+            $path = 'public/spa_sliders/images/';
+            $data['mobile_image_url'] = 'spa_sliders/images/' . FileUpload::storeFile($file, $path);
             SpaSlider::create($data);
         }
 

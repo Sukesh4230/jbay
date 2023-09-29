@@ -119,14 +119,20 @@ class ActivityController extends Controller
     {
         $validated = $request->validate([
             'image_url' => 'required|image',
+            'mobile_image_url' => 'required|image',
         ]);
 
         if ($request->file('image_url')) {
             $file = $request->file('image_url');
             $path = 'public/amenity_sliders/images/';
             $data['image_url'] = 'amenity_sliders/images/' . FileUpload::storeFile($file, $path);
-            ActivitySlider::create($data);
         }
+        if ($request->file('mobile_image_url')) {
+            $file = $request->file('mobile_image_url');
+            $path = 'public/amenity_sliders/images/';
+            $data['mobile_image_url'] = 'amenity_sliders/images/' . FileUpload::storeFile($file, $path);
+        }
+        ActivitySlider::create($data);
         return redirect()->route('activities.index');
     }
     public function deleteSlider(Request $request)

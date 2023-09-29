@@ -107,9 +107,14 @@ class RoomController extends Controller
             $file = $request->file('slider_image');
             $path = 'public/room_sliders/images/';
             $data['image_url'] = 'room_sliders/images/' . FileUpload::storeFile($file, $path);
-            $data['room_id'] = $request->id;
-            RoomSlider::create($data);
         }
+        if ($request->file('mobile_image_url')) {
+            $file = $request->file('mobile_image_url');
+            $path = 'public/room_sliders/images/';
+            $data['mobile_image_url'] = 'room_sliders/images/' . FileUpload::storeFile($file, $path);
+        }
+        $data['room_id'] = $request->id;
+        RoomSlider::create($data);
         return redirect()->route('stays.show', [$request->id]);
 
     }

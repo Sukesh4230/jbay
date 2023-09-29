@@ -15,6 +15,7 @@
                                 <thead>
                                     <tr>
                                         <th class="p-2" scope="col">Image</th>
+                                        <th class="p-2" scope="col">Image(Mobile)</th>
                                         <th class="p-2" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -25,6 +26,12 @@
                                                 <div class="avatar avatar-4xl ">
                                                     <img class="rounded-none " alt=""
                                                         src="{{ asset('storage/' . $slider->image_url) }}" />
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="avatar avatar-4xl ">
+                                                    <img class="rounded-none " alt=""
+                                                        src="{{ asset('storage/' . $slider->mobile_image_url) }}" />
                                                 </div>
                                             </td>
                                             <td class="p-2">
@@ -119,6 +126,12 @@
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="slider_image" />
+                                <small class="float-end text-danger mt-2">image dimension:
+                                    1600(width) x 1069(height)</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Upload Image(Mobile) </label>
+                                <input class="form-control" type="file" name="mobile_image_url" />
                                 <small class="float-end text-danger mt-2">image dimension:
                                     1600(width) x 1069(height)</small>
                             </div>
@@ -343,10 +356,15 @@
                         required: true,
                         extension: "jpg|jpeg|png",
                     },
+                    mobile_image_url:{
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
 
                 },
                 messages: {
-                    slider_image: 'Slider image is required'
+                    slider_image: 'Slider image is required',
+                    mobile_image_url: 'Slider image(Mobile) is required'
                 },
                 ignore: "",
             });

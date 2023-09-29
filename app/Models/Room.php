@@ -20,7 +20,7 @@ class Room extends Model
 
     public function sliders()
     {
-        return $this->hasMany(RoomSlider::class, 'room_id', 'id');
+        return $this->hasMany(RoomSlider::class, 'room_id', 'id')->latest();
     }
 
     public function footers()

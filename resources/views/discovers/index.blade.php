@@ -16,6 +16,7 @@
                                     <tr>
 
                                         <th class="p-2" scope="col">Image</th>
+                                        <th class="p-2" scope="col">Image(Mobile) </th>
                                         <th class="p-2" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -26,6 +27,12 @@
                                                 <div class="avatar avatar-4xl ">
                                                     <img class="rounded-none " alt=""
                                                         src="{{ asset('storage/' . $slider->image_url) }}" />
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="avatar avatar-4xl ">
+                                                    <img class="rounded-none " alt=""
+                                                        src="{{ asset('storage/' . $slider->mobile_image_url) }}" />
                                                 </div>
                                             </td>
                                             <td class="p-2">
@@ -103,12 +110,19 @@
                             type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('discover-slider-upload') }} method="post" enctype="multipart/form-data" name="Slider_form">
+                    <form action={{ route('discover-slider-upload') }} method="post" enctype="multipart/form-data"
+                        name="Slider_form">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label class="form-label">Upload Image</label>
                                 <input class="form-control" type="file" name="image_url" />
+                                <small class="float-end text-danger mt-2">image dimension:
+                                    1600(width) x 1069(height)</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Upload Image(Mobile)</label>
+                                <input class="form-control" type="file" name="mobile_image_url" />
                                 <small class="float-end text-danger mt-2">image dimension:
                                     1600(width) x 1069(height)</small>
                             </div>
@@ -143,7 +157,8 @@
                             class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('discovers.store') }} method="post" enctype="multipart/form-data" name="main_form_create">
+                    <form action={{ route('discovers.store') }} method="post" enctype="multipart/form-data"
+                        name="main_form_create">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
@@ -188,7 +203,8 @@
                             class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
                             <span class="fas fa-times fs--1"></span></button>
                     </div>
-                    <form action={{ route('discovers.store') }} method="post" enctype="multipart/form-data" name="main_form_edit">
+                    <form action={{ route('discovers.store') }} method="post" enctype="multipart/form-data"
+                        name="main_form_edit">
                         @csrf
                         <input type="hidden" name="id" id="edit_id">
                         <div class="modal-body">
@@ -376,10 +392,15 @@
                         required: true,
                         extension: "jpg|jpeg|png",
                     },
+                    mobile_image_url: {
+                        required: true,
+                        extension: "jpg|jpeg|png",
+                    },
 
                 },
                 messages: {
-                    image_url: 'Slider image is required'
+                    image_url: 'Slider image is required',
+                    mobile_image_url: 'Slider image(Mobile) is required'
                 },
                 ignore: "",
             });
@@ -424,6 +445,5 @@
 
 
         });
-
     </script>
 @endsection

@@ -50,14 +50,21 @@ class HomeController extends Controller
     {
         $validated = $request->validate([
             'slider_image' => 'required|image',
+            'mobile_image_url' => 'required|image',
         ]);
 
         if ($request->file('slider_image')) {
             $file = $request->file('slider_image');
             $path = 'public/home_sliders/images/';
             $data['image_url'] = 'home_sliders/images/' . FileUpload::storeFile($file, $path);
-            HomeSlider::create($data);
         }
+        if ($request->file('mobile_image_url')) {
+            $file = $request->file('mobile_image_url');
+            $path = 'public/home_sliders/images/';
+            $data['mobile_image_url'] = 'home_sliders/images/' . FileUpload::storeFile($file, $path);
+        }
+        HomeSlider::create($data);
+
         return redirect()->route('home');
     }
 
