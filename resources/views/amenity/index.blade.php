@@ -36,6 +36,11 @@
                                                 </div>
                                             </td>
                                             <td class="p-2">
+                                                <button class="btn btn-phoenix-info me-1 mb-1 edit_slider" type="button"
+                                                    data-bs-target="#slider-edit" id="{{ $slider->id }}"
+                                                    data-bs-toggle="modal">
+                                                    edit
+                                                </button>
                                                 <button class="btn btn-phoenix-danger me-1 mb-1 deleteSlider" type="button"
                                                     data-id="{{ $slider->id }}">Delete
                                                 </button>
@@ -130,7 +135,44 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Submit</button>
-                            <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-outline-primary" type="button"
+                                data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="slider-edit" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verticallyCenteredModalLabel">Slider Images</h5><button
+                            class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <span class="fas fa-times fs--1"></span></button>
+                    </div>
+                    <form action={{ route('amenities_slider_upload') }} method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-body">
+                            <input type="hidden" name="slider_id" id="edit_slider_id">
+                            <div class="mb-3">
+                                <label class="form-label">Upload Image</label>
+                                <input class="form-control" type="file" name="image_url" />
+                                <small class="float-end text-danger mt-2">image dimension:
+                                    1600(width) x 1069(height)</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Upload Image(Mobile)</label>
+                                <input class="form-control" type="file" name="mobile_image_url" />
+                                <small class="float-end text-danger mt-2">image dimension:
+                                    1600(width) x 1069(height)</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-outline-primary" type="button"
+                                data-bs-dismiss="modal">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -313,6 +355,10 @@
         //         }
         //     });
         // });
+        $(document).on('click', '.edit_slider', function() {
+            var id = $(this).attr('id');
+            $('#edit_slider_id').val(id);
+        });
 
         $(document).on('click', '.deleteDetails', function() {
             var id = $(this).data("id");
@@ -396,7 +442,7 @@
                         required: true,
                         extension: "jpg|jpeg|png",
                     },
-                    mobile_image_url:{
+                    mobile_image_url: {
                         required: true,
                         extension: "jpg|jpeg|png",
                     },

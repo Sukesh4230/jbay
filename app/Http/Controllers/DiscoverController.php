@@ -117,10 +117,17 @@ class DiscoverController extends Controller
 
     public function sliderImageUpload(Request $request)
     {
-        $validated = $request->validate([
-            'image_url' => 'required|image',
-            'mobile_image_url' => 'required|image',
-        ]);
+        if ($request->slider_id) {
+            $validated = $request->validate([
+                'image_url' => 'image',
+                'mobile_image_url' => 'image',
+            ]);
+        } else {
+            $validated = $request->validate([
+                'image_url' => 'required|image',
+                'mobile_image_url' => 'required|image',
+            ]);
+        }
 
         if ($request->file('image_url')) {
             $file = $request->file('image_url');
@@ -132,7 +139,14 @@ class DiscoverController extends Controller
             $path = 'public/discover_sliders/images/';
             $data['mobile_image_url'] = 'discover_sliders/images/' . FileUpload::storeFile($file, $path);
         }
-        DiscoverSlider::create($data);
+
+        if ($request->slider_id) {
+            $DiscoverSlider = DiscoverSlider::findorFail($request->slider_id);
+            if (isset($data))
+                $DiscoverSlider->update($data);
+        } else {
+            DiscoverSlider::create($data);
+        }
 
         return redirect()->route('discovers.index');
     }

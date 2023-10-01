@@ -90,10 +90,17 @@ class ContactController extends Controller
 
     public function sliderImageUpload(Request $request)
     {
-        $request->validate([
-            'image_url' => 'required|image',
-            'mobile_image_url' => 'required|image',
-        ]);
+        if ($request->slider_id) {
+            $validated = $request->validate([
+                'image_url' => 'image',
+                'mobile_image_url' => 'image',
+            ]);
+        } else {
+            $validated = $request->validate([
+                'image_url' => 'required|image',
+                'mobile_image_url' => 'required|image',
+            ]);
+        }
 
         if ($request->file('image_url')) {
             $file = $request->file('image_url');
@@ -105,7 +112,14 @@ class ContactController extends Controller
             $path = 'public/contact_sliders/images/';
             $data['mobile_image_url'] = 'contact_sliders/images/' . FileUpload::storeFile($file, $path);
         }
-        ContactSlider::create($data);
+        if ($request->slider_id) {
+            $ContactSlider = ContactSlider::findOrFail($request->slider_id);
+            if (isset($data)) {
+                $ContactSlider->update($data);
+            }
+        } else {
+            ContactSlider::create($data);
+        }
 
         return redirect()->route('contacts.index');
     }
