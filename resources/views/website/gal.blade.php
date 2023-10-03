@@ -1,5 +1,9 @@
    @extends('website.header')
-
+   <style>
+    .p-0{
+        padding:0px !important;
+    }
+</style>
 
 
    <div class="section_arrow_slide">
@@ -29,7 +33,7 @@
 
        <div class="demo-gallery">
            @if ($stayImage)
-               <div class="col-xs-6" data-src="{{ asset('storage/' . $stayImage) }}">
+               <div class="col-xs-6 p-0" data-src="{{ asset('storage/' . $stayImage) }}">
                    <div id="accommodation">
                        <div class="view overlay_gallery hm-red-strong">
                            <img class="img-responsive" src="{{ asset('storage/' . $stayImage) }}" alt=""
@@ -54,7 +58,7 @@
            @endif
 
            @if ($restaurantImage)
-               <div class="col-xs-3" data-src="{{ asset('storage/' . $restaurantImage) }}">
+               <div class="col-xs-3 p-0" data-src="{{ asset('storage/' . $restaurantImage) }}">
                    <div id="restaurant">
                        <div class="view overlay_gallery hm-red-strong">
                            <img class="img-responsive" src="{{ asset('storage/' . $restaurantImage) }}" alt=""
@@ -78,7 +82,7 @@
            @endif
 
            @if ($spaImage)
-               <div class="col-xs-3" data-src="{{ asset('storage/' . $spaImage) }}">
+               <div class="col-xs-3 p-0" data-src="{{ asset('storage/' . $spaImage) }}">
                    <div id="spa">
                        <div class="view overlay_gallery hm-red-strong">
                            <img class="img-responsive" src="{{ asset('storage/' . $spaImage) }}" alt=""
@@ -103,7 +107,7 @@
 
 
            @if ($amenitiesImage)
-               <div class="col-xs-3" data-src="{{ asset('storage/' . $amenitiesImage) }}">
+               <div class="col-xs-3 p-0" data-src="{{ asset('storage/' . $amenitiesImage) }}">
                    <div id="meetingroom">
                        <div class="view overlay_gallery hm-red-strong">
                            <img class="img-responsive" src="{{ asset('storage/' . $amenitiesImage) }}" alt=""
@@ -127,7 +131,7 @@
            @endif
 
            @if ($resortImage)
-               <div class="col-xs-6" data-src="{{ asset('storage/' . $resortImage) }}">
+               <div class="col-xs-6 p-0" data-src="{{ asset('storage/' . $resortImage) }}">
                    <div id="other">
                        <div class="view overlay_gallery hm-red-strong">
                            <img class="img-responsive" src="{{ asset('storage/' . $resortImage) }}" alt=""
@@ -154,7 +158,7 @@
 
 
            @if ($activityImage)
-           <div class="col-xs-3" data-src="{{ asset('storage/' . $activityImage) }}">
+           <div class="col-xs-3 p-0" data-src="{{ asset('storage/' . $activityImage) }}">
             <div id="activity">
                 <div class="view overlay_gallery hm-red-strong">
                     <img class="img-responsive" src="{{ asset('storage/' . $activityImage) }}" alt="" style="display: none;">

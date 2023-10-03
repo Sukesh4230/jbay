@@ -1,5 +1,7 @@
 @extends('layouts.main')
 @section('content')
+
+
 <div class="content">
     <div class="mt-4">
 
@@ -119,6 +121,7 @@
         </div>
     </div>
 
+    
 
     <div class="modal fade" id="verticallyCentered-1" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel-1"
         style="display: none;" aria-hidden="true">
