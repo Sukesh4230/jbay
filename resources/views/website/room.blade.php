@@ -1,13 +1,16 @@
 @extends('website.header')
 
 <style type="text/css">
-    #arrow_right {
-        display: none;
-    }
+.owl-prev {
+    top: 0px !important;
+}
 
-    #arrow_left {
-        display: none;
-    }
+
+.owl-next {
+ 
+    top: 0px !important;
+}
+
 </style>
 
 <div id="maximage">

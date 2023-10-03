@@ -1,13 +1,13 @@
    @extends('website.header')
    <style type="text/css">
-    #arrow_right {
-    display: none;
-}
+    .owl-prev {
+        display: none !important;
+    }
 
-#arrow_left {
-    display: none;
-}
-   </style>
+    .owl-next {
+      display: none !important;
+    }
+</style>
 
    <div id="maximage">
        @foreach ($sliders ?? [] as $slider)

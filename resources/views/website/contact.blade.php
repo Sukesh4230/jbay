@@ -1,22 +1,15 @@
    @extends('website.header')
 
 
-
-   <style type="text/css">
-       .owl-theme .owl-nav [class*=owl-] {
-
-           display: none;
-       }
-   </style>
-
-
    <div id="maximage">
 
        @foreach ($sliders ?? [] as $slider)
            <div class="mc-image">
+          
                <div class="overlay_slide">
                    <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
                    <img class="mobile-img" src={{ asset('storage/' . $slider->mobile_image_url) }}>
+                   
                    <div class="text_slide">
                        <ul>
                            <li>
@@ -29,40 +22,12 @@
                    </div>
                </div>
            </div>
+    </div>
        @endforeach
-       {{-- <div class="mc-image">
-                <div class="overlay_slide">
-                    <img src={{ asset('web/assets/images/3.jpg') }}>
-
-                    <div class="text_slide">
-                        <ul>
-                            <li>
-                               <!--  <h1>Contact Junglebay</h1> -->
-                            </li>
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mc-image">
-                <div class="overlay_slide">
-                    <img src={{ asset('web/assets/images/2.jpg') }}>
-                    <div class="text_slide">
-                        <ul>
-                            <li>
-                             <!--    <h1>Contact Junglebay</h1> -->
-                            </li>
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
 
    </div>
+
+   
 
    <section class="section_reservation">
        <div class="container">
@@ -109,7 +74,7 @@
 
            <div class="col-xs-6">
 
-               <div class="imagebox_offers" style="background: url('assets/images/1.jpg') right;">
+               <div class="imagebox_offers" >
                    <div class="book_offers">
 
 

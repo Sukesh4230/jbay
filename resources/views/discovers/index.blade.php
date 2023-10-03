@@ -126,10 +126,11 @@
                                     1600(width) x 1069(height)</small>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Upload Image(Mobile)</label>
+                                <label class="form-label">Upload Image(Mobile Screen)</label>
                                 <input class="form-control" type="file" name="mobile_image_url" />
                                 <small class="float-end text-danger mt-2">image dimension:
-                                    1600(width) x 1069(height)</small>
+                                1080(width) x 1920(height)
+</small>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -163,10 +164,10 @@
                                     1600(width) x 1069(height)</small>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Upload Image(Mobile)</label>
+                                <label class="form-label">Upload Image(Mobile Screen)</label>
                                 <input class="form-control" type="file" name="mobile_image_url" />
                                 <small class="float-end text-danger mt-2">image dimension:
-                                    1600(width) x 1069(height)</small>
+                                1080(width) x 1920(height)</small>
                             </div>
                         </div>
                         <div class="modal-footer">

@@ -660,7 +660,7 @@ p {
 .owl-prev {
     position: absolute;
     left: 50px;
-    top: 0px;
+    top: -230px;
 }
 
 .owl-prev:before {
@@ -672,7 +672,7 @@ p {
 .owl-next {
     position: absolute;
     right: 50px;
-    top: 0px;
+    top: -230px;
 }
 
 .owl-next:before {

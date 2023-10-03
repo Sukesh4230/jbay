@@ -4614,7 +4614,7 @@ margin-top: 5px;
   display: none;
     }
 
-    a:hover, a:focus {
+    a:hover{
       color: #23527c;
       text-decoration: none !important;
   }

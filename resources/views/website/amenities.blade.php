@@ -3,15 +3,11 @@
 
 <style type="text/css">
     .owl-prev {
-        position: absolute;
-        left: 50px;
-        top: 0px !important;
+        display: none !important;
     }
 
     .owl-next {
-        position: absolute;
-        right: 50px;
-        top: 0px !important;
+      display: none !important;
     }
 </style>
 

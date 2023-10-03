@@ -1,19 +1,5 @@
 @extends('website.header')
-<style>
-    .owl-prev {
-        top: -250 !important;
-    }
 
-    .owl-next {
-        top: -250 !important;
-    }
-
-    a:hover,
-    a:focus {
-        color: #23527c;
-        text-decoration: none !important;
-    }
-</style>
 <div id="maximage">
     @foreach ($sliders ?? [] as $slider)
         <div class="mc-image">
