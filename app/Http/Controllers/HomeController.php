@@ -48,11 +48,18 @@ class HomeController extends Controller
 
     public function sliderImageUpload(Request $request)
     {
-        $validated = $request->validate([
-            'slider_image' => 'required|image',
-            'mobile_image_url' => 'required|image',
-        ]);
+        if ($request->id) {
+            $validated = $request->validate([
+                'slider_image' => 'image',
+                'mobile_image_url' => 'image',
+            ]);
 
+        } else {
+            $validated = $request->validate([
+                'slider_image' => 'required|image',
+                'mobile_image_url' => 'required|image',
+            ]);
+        }
         if ($request->file('slider_image')) {
             $file = $request->file('slider_image');
             $path = 'public/home_sliders/images/';
@@ -63,8 +70,13 @@ class HomeController extends Controller
             $path = 'public/home_sliders/images/';
             $data['mobile_image_url'] = 'home_sliders/images/' . FileUpload::storeFile($file, $path);
         }
-        HomeSlider::create($data);
-
+        if ($request->id) {
+            $home = HomeSlider::findOrFail($request->id);
+            if (isset($data))
+                $home->update($data);
+        } else {
+            HomeSlider::create($data);
+        }
         return redirect()->route('home');
     }
 

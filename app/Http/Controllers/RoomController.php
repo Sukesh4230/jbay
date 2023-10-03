@@ -98,10 +98,21 @@ class RoomController extends Controller
 
     public function sliderImageUpload(Request $request)
     {
-        $validated = $request->validate([
-            'id' => 'required|numeric|integer',
-            'slider_image' => 'required|image',
-        ]);
+        if ($request->slider_id) {
+            $validated = $request->validate([
+                'id' => 'required|numeric|integer',
+                'slider_image' => 'image',
+                'mobile_image_url' => 'image',
+            ]);
+        } else {
+            $validated = $request->validate([
+                'id' => 'required|numeric|integer',
+                'slider_image' => 'required|image',
+                'mobile_image_url' => 'required|image',
+            ]);
+        }
+
+
 
         if ($request->file('slider_image')) {
             $file = $request->file('slider_image');
@@ -114,7 +125,14 @@ class RoomController extends Controller
             $data['mobile_image_url'] = 'room_sliders/images/' . FileUpload::storeFile($file, $path);
         }
         $data['room_id'] = $request->id;
-        RoomSlider::create($data);
+        if ($request->slider_id) {
+            $slider = RoomSlider::findOrFail($request->slider_id);
+            if (isset($data))
+                $slider->update($data);
+        } else {
+            RoomSlider::create($data);
+        }
+
         return redirect()->route('stays.show', [$request->id]);
 
     }
