@@ -1,50 +1,47 @@
    @extends('website.header')
 
-
    <div id="maximage">
 
        @foreach ($sliders ?? [] as $slider)
-           <div class="mc-image">
-          
-               <div class="overlay_slide">
-                   <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
-                   <img class="mobile-img" src={{ asset('storage/' . $slider->mobile_image_url) }}>
-                   
-                   <div class="text_slide">
-                       <ul>
-                           <li>
-                               <!-- <h1>Contact Junglebay</h1> -->
-                           </li>
-                           <li>
+       <di class="mc-image">
 
-                           </li>
-                       </ul>
-                   </div>
+       <img class="laptop-img" src={{ asset('storage/' . $slider->image_url) }}>
+               <img class="mobile-img" src={{ asset('storage/' . $slider->mobile_image_url) }}>
+           <div class="overlay_slide">
+           
+
+               <div class="text_slide">
+                   <ul>
+                       <li>
+                           <!-- <h1>Contact Junglebay</h1> -->
+                       </li>
+                       <li>
+
+                       </li>
+                   </ul>
                </div>
            </div>
-    </div>
-       @endforeach
+
+   </div>
+   @endforeach
 
    </div>
 
-   
-
    <section class="section_reservation">
-       <div class="container">
+       <div class="container custom-flex-container">
 
-           <div class="col-xs-6">
+           <div class="col-xs-12 col-md-6 custom-flex-item">
                <div class="imagebox_offers box_reservation">
                    <h1> Get In Touch With Us </h1>
                    <p> Book direct and receive the best rate, guaranteed </p>
-
 
                    <form action={{ route('web-save-contact') }} method="POST">
                        @csrf
                        <div class="row">
 
-                           <div class="col-md-6">
-                               <input type="email" class="form-control reservation_box"
-                                   placeholder="Your email address" name="email">
+                           <div class="col-md-6 custom-flex-item p-0">
+                               <input type="email" class="form-control reservation_box" placeholder="Your email address"
+                                   name="email">
                            </div>
 
                            {{-- <input type="hidden" name="_next" value="https://junglebayresorts.com/thanks.php"> --}}
@@ -54,7 +51,6 @@
                                    name="name">
                            </div>
 
-
                            <div class="col-md-12">
                                <input type="text" class="form-control reservation_box" name="phone"
                                    placeholder="Your Mobile number *">
@@ -62,7 +58,8 @@
 
                            <div class="col-md-12">
 
-                               <textarea class="form-control reservation_box" name="comment" placeholder="What you are looking for?"></textarea>
+                               <textarea class="form-control reservation_box" name="comment"
+                                   placeholder="What you are looking for?"></textarea>
 
                            </div>
 
@@ -72,12 +69,10 @@
                </div>
            </div>
 
-           <div class="col-xs-6">
+           <div class="col-xs-12 col-md-6 p-0">
 
-               <div class="imagebox_offers" >
+               <div class="imagebox_offers">
                    <div class="book_offers">
-
-
 
                    </div>
 
@@ -122,7 +117,6 @@
        </div>
    </section>
 
-
    <section class="section_contactus" style="margin-top: 20px;margin-bottom: 20px;">
        <div class="col-xs-12">
            <div class="imagebox_facilities">
@@ -133,23 +127,11 @@
 
    </section>
 
-
-
-
-
-
-
-
-
-
    <div class="container-fluid">
        <div class="row">
            <!-- /.col-md-8 -->
 
-
        </div><!-- /.row -->
    </div>
-
-
 
    @extends('website.footer')

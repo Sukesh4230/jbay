@@ -720,7 +720,7 @@
 
                                 </li>
                                 <li><a class="" href={{ route('web-wayanad') }}>Wayanad</a></li>
-                                <li><a class="" href="gal">Gallery</a></li>
+                                <li><a class="" href={{ route('web-gallery') }}>Gallery</a></li>
                                 <li><a class="" href="contact">Contact</a></li>
                             </ul>
 
