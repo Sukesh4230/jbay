@@ -5,6 +5,37 @@
 <head>
 
     <title>Jungle Bay Resorts and Spa Wayanad</title>
+
+    <style>
+                #loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Styles for the loader animation (adjust as needed) */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* Keyframes for the loader animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('web/assets/css/animate90f6.css') }}" type="text/css" rel="stylesheet">
@@ -48,6 +79,12 @@
 
 
     <script type="text/javascript" src={{ asset('web/assets/js/jquery90f6.js?=v3') }}></script>
+    <script>
+                window.addEventListener('load', () => {
+    const loaderContainer = document.getElementById('loader-container');
+    loaderContainer.style.display = 'none';
+});
+            </script>
 
     <script type="text/javascript" src={{ asset('web/assets/plugins/loading/js/loading90f6.js?=v3') }}></script>
     <script type="text/javascript" src={{ asset('web/assets/plugins/bootstrap/js/bootstrap90f6.js?=v3') }}></script>
@@ -625,6 +662,8 @@
         .design--8 {
             top: 56%;
         }
+
+
     </style>
 
 
@@ -633,7 +672,9 @@
 
 <body>
 
-    <section class="loading">
+<div id="loader-container">
+        <div class="loader"></div>
+    </div>
     </section>
 
         <section class="section_slideshow">
@@ -752,3 +793,6 @@
                     </a>
                 </div>
             </section>
+
+
+           

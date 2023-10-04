@@ -27,14 +27,16 @@
                                </div>
                            </div>
                        </div>
+
+
                        <div class="ps-footer__column">
                            <div class="ps-widget ps-widget--footer">
                                <div class="ps-widget__content">
                                    <ul class="ps-widget__links mbl">
-                                       <li><a href="amenities.php">Amenities</a></li>
-                                       <li><a href="activities.php">Activities</a></li>
-                                       <li><a href="wellness.php">Spa</a></li>
-                                       <li><a href="gallery.php">Gallery</a></li>
+                                       <li><a href={{ route('web-amenities') }}>Amenities</a></li>
+                                       <li><a href={{ route('web-activities') }}>Activities</a></li>
+                                       <li><a href={{ route('web-spa') }}>Spa</a></li>
+                                       <li><a href={{ route('web-gallery') }}>Gallery</a></li>
                                        <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                        <li><a href="resort-policy.php">Resort Policy</a></li>
 
@@ -53,10 +55,10 @@
                            <div class="ps-widget ps-widget--footer">
                                <div class="ps-widget__content">
                                    <ul class="ps-widget__links mbl">
-                                       <li><a href="wayanad.php">Wayanad</a></li>
-                                       <li><a href="contact.php">Contact Us</a></li>
-                                       <li><a href="package.php">Packages</a></li>
-                                       <li><a href="blog.php">Blog</a></li>
+                                       <li><a href={{ route('web-wayanad') }}>Wayanad</a></li>
+                                       <li><a href="contact">Contact Us</a></li>
+                                       
+                                       <li><a href="blog">Blog</a></li>
 
                                    </ul>
                                </div>
